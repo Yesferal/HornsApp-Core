@@ -1,1 +1,4 @@
-gradle releaseFatFramework
+./gradlew debugFatFramework
+
+./gradlew buildDebugXCFramework
+
