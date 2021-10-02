@@ -1,9 +1,11 @@
 plugins {
     kotlin("multiplatform") version "1.5.10"
+    `maven-publish`
 }
 
+val libraryVersion = "0.1.1"
 group = "com.yesferal.hornsapp.core"
-version = "0.1.1"
+version = libraryVersion
 
 repositories {
     mavenCentral()
@@ -112,5 +114,4 @@ kotlin {
             xcFrameworkDest.deleteRecursively()
         }
     }
-
 }
