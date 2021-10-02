@@ -3,7 +3,7 @@ plugins {
     id("maven-publish")
 }
 
-val libraryVersion = "0.1.5"
+val libraryVersion = "0.1.6"
 group = "com.yesferal.hornsapp.core"
 version = libraryVersion
 
@@ -37,26 +37,6 @@ kotlin {
         binaries.framework {
             baseName = libraryName
         }
-    }
-    tasks.register<org.jetbrains.kotlin.gradle.tasks.FatFrameworkTask>("debugFatFramework") {
-        baseName = libraryName
-        destinationDir = buildDir.resolve("fat-framework/debug")
-        from(
-            iosX64.binaries.getFramework("Debug"),
-            iosArm64.binaries.getFramework("Debug")
-        )
-    }
-
-    tasks.register<org.jetbrains.kotlin.gradle.tasks.FatFrameworkTask>("releaseFatFramework") {
-        // The fat framework must have the same base name as the initial frameworks.
-        baseName = libraryName
-        // The default destination directory is "<build directory>/fat-framework".
-        destinationDir = buildDir.resolve("fat-framework/release")
-        // Specify the frameworks to be merged.
-        from(
-            iosX64.binaries.getFramework("Release"),
-            iosArm64.binaries.getFramework("Release")
-        )
     }
 
     tasks.register("buildDebugXCFramework", Exec::class.java) {
