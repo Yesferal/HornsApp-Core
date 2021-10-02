@@ -1,9 +1,9 @@
 plugins {
     kotlin("multiplatform") version "1.5.10"
-    `maven-publish`
+    id("maven-publish")
 }
 
-val libraryVersion = "0.1.1"
+val libraryVersion = "0.1.2"
 group = "com.yesferal.hornsapp.core"
 version = libraryVersion
 
@@ -112,6 +112,15 @@ kotlin {
 
         doFirst {
             xcFrameworkDest.deleteRecursively()
+        }
+    }
+}
+
+configure<PublishingExtension> {
+    publications {
+        create<MavenPublication>("maven") {
+            artifact(tasks["sourcesJar"])
+            version = libraryVersion
         }
     }
 }
