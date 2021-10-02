@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'HornsAppCore'
-  spec.version = '0.1.6'
+  spec.version = '0.1.7'
   spec.homepage = 'https://github.com/Yesferal/HornsApp-KotlinMultiplatform'
   spec.source = { :git => "https://github.com/Yesferal/HornsApp-KotlinMultiplatform.git", :tag => spec.version }
   spec.authors = { "Yesferal Cueva" => "yesferal@gmail.com" }
