@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   spec.module_name = "#{spec.name}_core"
   spec.ios.deployment_target = '12.0'
 
-  spec.prepare_command = "sh ./script/pre-build.script"
+  spec.prepare_command = "sh ./script/prepare_command.script"
 
   spec.pod_target_xcconfig = {
       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
