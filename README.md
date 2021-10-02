@@ -1,39 +1,39 @@
 # Horns App - Kotlin Multiplatform
-This is a Kotlin Multiplatform that will be import in Android adn iOS projects.
+This is a Kotlin Multiplatform that will be import in Android and iOS projects.
 
-## How to create a version
+## How to create a new version
 
 ### Create a Tag
-Create a new git tag
+First, we have to create a new git tag
 ```
-git tag '0.1.1'
+git tag '1.0.0'
 ```
-and push the new tag into Remote Repository
+then push this tag into the Remote Repository
 ```
 git push origin --tags   
 ```
 ### Push the new version
-First, you could clean the cache, just in case
+As an optional step you could clean the cache, just in case
 ```
 pod cache clean --all 
 ```
 
-Also, you could validate the .podspec file
+Also, you may validate the .podspec file
 ```
 pod spec lint --verbose  
 ```
 
-Finally, you should push the new library version
+Finally, you should push the new library version. This version will be published in our [HornsApp-PodSpecs Repository](https://github.com/Yesferal/HornsApp-PodSpecs)
 ```
 pod repo push HornsApp-PodSpecs HornsAppCore.podspec
 ```
 
 ## Podspec
-The `HornsAppCore.podspec` file contains the description of the library
+The `HornsAppCore.podspec` file contains the description of our library
 
 ## Script
 The script folder contains the `pre-build.script` that will be executed by HornsAppCore.podspec file,
-as a prepare command. This script contains pre-conditions that are needed in order to publish the library.
+as a prepare command. This script contains pre-conditions that are necessary in order to publish our library.
 
 ## License
 ```
