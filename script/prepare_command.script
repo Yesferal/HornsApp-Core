@@ -1,4 +1,2 @@
-./gradlew debugFatFramework
-
 ./gradlew buildDebugXCFramework
 

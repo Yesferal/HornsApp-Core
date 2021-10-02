@@ -1,3 +1,4 @@
+[![](https://jitpack.io/v/Yesferal/HornsApp-Core.svg)](https://jitpack.io/#Yesferal/HornsApp-Core)
 # Horns App - Kotlin Multiplatform
 This is a Kotlin Multiplatform that will be import in Android and iOS projects.
 

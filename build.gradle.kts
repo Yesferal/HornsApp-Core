@@ -70,7 +70,7 @@ kotlin {
         val x64FrameworkPath = "$rootDir/build/bin/iosX64/debugFramework/${libraryName}.framework"
         val x64DebugSymbolsPath = "$rootDir/build/bin/iosX64/debugFramework/${libraryName}.framework.dSYM"
 
-        val xcFrameworkDest = File("$rootDir/$libraryName.xcframework")
+        val xcFrameworkDest = File("$rootDir/build/bin/xcframework/$libraryName.xcframework")
         executable = "xcodebuild"
         args(mutableListOf<String>().apply {
             add("-create-xcframework")
