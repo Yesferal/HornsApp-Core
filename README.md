@@ -13,7 +13,7 @@ then push this tag into the Remote Repository
 ```
 git push origin --tags   
 ```
-### Push the new version
+### [iOS] Push a new version in PodSpecs Repository
 As an optional step you could clean the cache, just in case
 ```
 pod cache clean --all 
@@ -29,10 +29,11 @@ Finally, you should push the new library version. This version will be published
 pod repo push HornsApp-PodSpecs HornsAppCore.podspec
 ```
 
-## Podspec
-The `HornsAppCore.podspec` file contains the description of our library
+#### Podspec
+The `HornsAppCore.podspec` file contains the description of our library. 
+This file will first execute a script in order to build a xcframework.
 
-## Script
+#### Script
 The script folder contains the `pre-build.script` that will be executed by HornsAppCore.podspec file,
 as a prepare command. This script contains pre-conditions that are necessary in order to publish our library.
 
