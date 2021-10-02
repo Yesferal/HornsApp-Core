@@ -39,18 +39,18 @@ kotlin {
         }
     }
 
-    tasks.register("buildDebugXCFramework", Exec::class.java) {
-        description = "Create a Debug XCFramework"
-        dependsOn("linkDebugFrameworkIosArm64")
-        dependsOn("linkDebugFrameworkIosX64")
+    tasks.register("buildReleaseXCFramework", Exec::class.java) {
+        description = "Create a Release XCFramework"
+        dependsOn("linkReleaseFrameworkIosArm64")
+        dependsOn("linkReleaseFrameworkIosX64")
 
-        val arm64FrameworkPath = "$rootDir/build/bin/iosArm64/debugFramework/${libraryName}.framework"
-        val arm64DebugSymbolsPath = "$rootDir/build/bin/iosArm64/debugFramework/${libraryName}.framework.dSYM"
+        val arm64FrameworkPath = "$rootDir/build/bin/iosArm64/releaseFramework/${libraryName}.framework"
+        val arm64ReleaseSymbolsPath = "$rootDir/build/bin/iosArm64/releaseFramework/${libraryName}.framework.dSYM"
 
-        val x64FrameworkPath = "$rootDir/build/bin/iosX64/debugFramework/${libraryName}.framework"
-        val x64DebugSymbolsPath = "$rootDir/build/bin/iosX64/debugFramework/${libraryName}.framework.dSYM"
+        val x64FrameworkPath = "$rootDir/build/bin/iosX64/releaseFramework/${libraryName}.framework"
+        val x64ReleaseSymbolsPath = "$rootDir/build/bin/iosX64/releaseFramework/${libraryName}.framework.dSYM"
 
-        val xcFrameworkDest = File("$rootDir/build/bin/xcframework/$libraryName.xcframework")
+        val xcFrameworkDest = File("$rootDir/build/bin/xcframework/releaseFramework/$libraryName.xcframework")
         executable = "xcodebuild"
         args(mutableListOf<String>().apply {
             add("-create-xcframework")
@@ -61,13 +61,13 @@ kotlin {
             add("-framework")
             add(arm64FrameworkPath)
             add("-debug-symbols")
-            add(arm64DebugSymbolsPath)
+            add(arm64ReleaseSymbolsPath)
 
             // Simulator
             add("-framework")
             add(x64FrameworkPath)
             add("-debug-symbols")
-            add(x64DebugSymbolsPath)
+            add(x64ReleaseSymbolsPath)
         })
 
         doFirst {
