@@ -20,13 +20,10 @@ kotlin {
             useJUnit()
         }
     }
-    
+
     sourceSets {
-        val commonMain by getting
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-            }
+        sourceSets["jvmMain"].dependencies {
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
         }
     }
 
