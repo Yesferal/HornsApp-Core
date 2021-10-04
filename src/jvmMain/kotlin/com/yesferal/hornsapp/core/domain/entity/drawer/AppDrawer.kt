@@ -5,4 +5,3 @@ data class AppDrawer(
     val newest: List<ScreenDrawer>?,
     val categories: List<CategoryDrawer>?
 )
-
