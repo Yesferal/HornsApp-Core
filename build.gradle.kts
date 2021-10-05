@@ -12,6 +12,7 @@ repositories {
 }
 
 kotlin {
+
     jvm {
         compilations.all {
             kotlinOptions.jvmTarget = "1.8"
@@ -27,9 +28,12 @@ kotlin {
         }
     }
 
-    val iosX64 = iosX64()
-    val iosArm64 = iosArm64()
     val libraryName = "HornsAppCore"
+
+    // Simulator Architecture
+    val iosX64 = iosX64()
+    // Device Architecture
+    val iosArm64 = iosArm64()
     configure(listOf(iosX64, iosArm64)) {
         binaries.framework {
             baseName = libraryName
