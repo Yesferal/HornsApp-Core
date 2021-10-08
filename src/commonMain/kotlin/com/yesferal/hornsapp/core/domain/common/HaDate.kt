@@ -1,6 +1,6 @@
 package com.yesferal.hornsapp.core.domain.common
 
-expect class HaDate(value: String) {
+expect class HaDate(time: Long?) {
 
     fun formattedWith(pattern: String): String?
 

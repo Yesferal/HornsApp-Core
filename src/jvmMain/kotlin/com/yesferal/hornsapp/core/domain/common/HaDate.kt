@@ -4,13 +4,18 @@ import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 
-actual class HaDate actual constructor(val value: String) {
+actual class HaDate actual constructor(val time: Long?) {
 
     actual fun formattedWith(pattern: String): String? {
+        if (time == null) {
+            return null
+        }
+
         return try {
+            val date = Date(time)
             val simpleDateFormat = SimpleDateFormat(pattern, Locale.getDefault())
             simpleDateFormat.timeZone = TimeZone.getTimeZone("GMT")
-            simpleDateFormat.format(value)
+            simpleDateFormat.format(date)
         } catch (e: Exception) {
             null
         }

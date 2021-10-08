@@ -1,6 +1,6 @@
 package com.yesferal.hornsapp.core.domain.common
 
-actual class HaDate actual constructor(value: String) {
+actual class HaDate actual constructor(time: Long?) {
 
     actual fun formattedWith(pattern: String): String? {
         TODO("Not yet implemented")
