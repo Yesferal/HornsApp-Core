@@ -4,7 +4,7 @@ import com.yesferal.hornsapp.core.data.abstraction.storage.ConcertStorageDataSou
 import com.yesferal.hornsapp.core.data.abstraction.remote.ConcertRemoteDataSource
 import com.yesferal.hornsapp.core.domain.abstraction.ConcertRepository
 import com.yesferal.hornsapp.core.domain.entity.Concert
-import com.yesferal.hornsapp.core.domain.common.Result
+import com.yesferal.hornsapp.core.domain.util.HaResult
 
 class ConcertRepositoryImpl(
     private val concertStorageDataSource: ConcertStorageDataSource,
@@ -12,12 +12,12 @@ class ConcertRepositoryImpl(
 ) : ConcertRepository {
     var concerts: List<Concert>? = null
 
-    override suspend fun getConcerts(): Result<List<Concert>> {
+    override suspend fun getConcerts(): HaResult<List<Concert>> {
         return concerts?.let {
-            Result.Success(it)
+            HaResult.Success(it)
         } ?: run {
             val result = concertRemoteDataSource.getConcerts()
-            if (result is Result.Success) {
+            if (result is HaResult.Success) {
                 concerts = result.value
             }
             result
@@ -26,7 +26,7 @@ class ConcertRepositoryImpl(
 
     override suspend fun getConcert(
         id: String
-    ): Result<Concert> = concertRemoteDataSource.getConcert(id)
+    ): HaResult<Concert> = concertRemoteDataSource.getConcert(id)
 
     override suspend fun getFavoriteConcert(): List<Concert> {
         return concertStorageDataSource.getFavoriteConcerts()

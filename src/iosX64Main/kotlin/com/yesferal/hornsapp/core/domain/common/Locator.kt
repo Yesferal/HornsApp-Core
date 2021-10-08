@@ -1,4 +1,4 @@
-package com.yesferal.hornsapp.core.domain.abstraction
+package com.yesferal.hornsapp.core.domain.common
 
 import platform.Foundation.NSLocale
 import platform.Foundation.currentLocale

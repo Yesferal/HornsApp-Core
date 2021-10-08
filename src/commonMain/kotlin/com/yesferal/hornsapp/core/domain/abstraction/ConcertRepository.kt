@@ -1,14 +1,14 @@
 package com.yesferal.hornsapp.core.domain.abstraction
 
-import com.yesferal.hornsapp.core.domain.common.Result
+import com.yesferal.hornsapp.core.domain.util.HaResult
 import com.yesferal.hornsapp.core.domain.entity.Concert
 
 interface ConcertRepository {
-    suspend fun getConcerts(): Result<List<Concert>>
+    suspend fun getConcerts(): HaResult<List<Concert>>
 
     suspend fun getConcert(
         id: String
-    ): Result<Concert>
+    ): HaResult<Concert>
 
     suspend fun getFavoriteConcert(): List<Concert>
 
