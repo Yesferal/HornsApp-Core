@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'HornsAppCore'
-  spec.version = '0.3.4'
+  spec.version = '0.3.5'
   spec.homepage = 'https://github.com/Yesferal/HornsApp-KotlinMultiplatform'
   spec.source = { :git => "https://github.com/Yesferal/HornsApp-KotlinMultiplatform.git", :tag => spec.version }
   spec.authors = { "Yesferal Cueva" => "yesferal@gmail.com" }
@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   spec.module_name = "#{spec.name}_core"
   spec.ios.deployment_target = '12.0'
 
-  spec.prepare_command = "sh ./script/prepare_command.script"
+  spec.prepare_command = "sh ./script/prepare_command.sh"
 
   spec.pod_target_xcconfig = {
       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
