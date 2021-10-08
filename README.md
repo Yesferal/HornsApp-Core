@@ -34,7 +34,7 @@ The `HornsAppCore.podspec` file contains the description of our library.
 This file will first execute a script in order to build a xcframework.
 
 #### Script
-The script folder contains the `pre-build.script` that will be executed by HornsAppCore.podspec file,
+The script folder contains the `prepare_command.script` that will be executed by HornsAppCore.podspec file,
 as a prepare command. This script contains pre-conditions that are necessary in order to publish our library.
 
 ## License
