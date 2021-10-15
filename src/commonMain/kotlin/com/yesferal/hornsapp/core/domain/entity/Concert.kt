@@ -1,7 +1,5 @@
 package com.yesferal.hornsapp.core.domain.entity
 
-import com.yesferal.hornsapp.core.domain.util.SafeUri
-
 data class Concert (
     val id: String,
     val name: String?,
@@ -11,10 +9,10 @@ data class Concert (
     val tags: List<String>?,
     var isFavorite: Boolean,
     val description: String? = null,
-    val trailerUrl: SafeUri? = null,
-    val facebookUrl: SafeUri? = null,
+    val trailerUrl: String? = null,
+    val facebookUrl: String? = null,
     val venue: Venue? = null,
     val bands: List<Band>? = null,
-    val ticketingUrl: SafeUri? = null,
+    val ticketingUrl: String? = null,
     val ticketingHost: String? = null
 )
