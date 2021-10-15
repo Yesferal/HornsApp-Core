@@ -1,3 +1,3 @@
 
-rootProject.name = "HornsApp-Kotlin"
+rootProject.name = "HornsApp-Core"
 

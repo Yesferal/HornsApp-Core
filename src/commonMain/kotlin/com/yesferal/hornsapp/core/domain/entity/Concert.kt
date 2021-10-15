@@ -1,13 +1,12 @@
 package com.yesferal.hornsapp.core.domain.entity
 
-import com.yesferal.hornsapp.core.domain.common.HaDate
 import com.yesferal.hornsapp.core.domain.util.SafeUri
 
 data class Concert (
     val id: String,
     val name: String?,
     val headlinerImage: String?,
-    val dateTime: HaDate?,
+    val timeInMillis: Long?,
     val genre: String?,
     val tags: List<String>?,
     var isFavorite: Boolean,
