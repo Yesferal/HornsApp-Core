@@ -1,5 +1,5 @@
 package com.yesferal.hornsapp.core
 
 class HornsAppCoreVersion {
-    val version = "0.3.8"
+    val version = "0.4.0"
 }
