@@ -10,15 +10,14 @@ class ConcertRepositoryImpl(
     private val concertStorageDataSource: ConcertStorageDataSource,
     private val concertRemoteDataSource: ConcertRemoteDataSource
 ) : ConcertRepository {
-    var concerts: List<Concert>? = null
 
     override suspend fun getConcerts(): HaResult<List<Concert>> {
-        return concerts?.let {
+        return concertStorageDataSource.getConcertCached()?.let {
             HaResult.Success(it)
         } ?: run {
             val result = concertRemoteDataSource.getConcerts()
             if (result is HaResult.Success) {
-                concerts = result.value
+                concertStorageDataSource.updateConcertCached(result.value)
             }
             result
         }
