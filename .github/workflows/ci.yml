@@ -30,6 +30,10 @@ jobs:
       - name: Clean
         run: ./gradlew :clean
 
+      # Execute assemble
+      - name: Assemble
+        run: ./gradlew :assemble
+
       # Execute unit tests
       - name: Unit Test
-        run: ./gradlew :assemble
+        run: ./gradlew :jvmTest

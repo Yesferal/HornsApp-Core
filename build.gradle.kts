@@ -26,6 +26,10 @@ kotlin {
         sourceSets["jvmMain"].dependencies {
             implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
         }
+        sourceSets["jvmTest"].dependencies {
+            implementation("junit:junit:4.13.2")
+            implementation("org.mockito:mockito-core:4.0.0")
+        }
     }
 
     val libraryName = "HornsAppCore"
