@@ -1,5 +1,6 @@
 package com.yesferal.hornsapp.core.domain.usecase
 
+import com.yesferal.hornsapp.core.MockitoTest
 import com.yesferal.hornsapp.core.domain.abstraction.ConcertRepository
 import com.yesferal.hornsapp.core.domain.entity.Concert
 import com.yesferal.hornsapp.core.domain.util.HaResult
@@ -9,9 +10,8 @@ import org.junit.Before
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
-import org.mockito.MockitoAnnotations
 
-class GetConcertUseCaseTest {
+class GetConcertUseCaseTest: MockitoTest {
 
     private val concertID = "12345"
 
@@ -23,9 +23,7 @@ class GetConcertUseCaseTest {
     private lateinit var getConcertUseCase: GetConcertUseCase
 
     @Before
-    fun init() {
-        MockitoAnnotations.openMocks(this)
-
+    override fun mockClasses() {
         getFavoriteConcertsUseCase = GetFavoriteConcertsUseCase(concertRepository)
 
         runBlocking {
@@ -37,7 +35,7 @@ class GetConcertUseCaseTest {
     private fun getConcert() = Concert.Builder(concertID).build()
 
     @Test
-    fun getConcert_whenFavorite_returnFavoriteTrue() {
+    fun givenGetConcert_WhenFavorite_ThenReturnFavoriteTrue() {
         runBlocking {
             // Given
             getConcertUseCase = GetConcertUseCase(concertRepository, getFavoriteConcertsUseCase)
@@ -55,7 +53,7 @@ class GetConcertUseCaseTest {
     }
 
     @Test
-    fun getConcert_whenNotFavorite_returnFavoriteFalse() {
+    fun givenGetConcert_WhenNotFavorite_ThenReturnFavoriteFalse() {
         runBlocking {
             // Given
             getConcertUseCase = GetConcertUseCase(concertRepository, getFavoriteConcertsUseCase)
