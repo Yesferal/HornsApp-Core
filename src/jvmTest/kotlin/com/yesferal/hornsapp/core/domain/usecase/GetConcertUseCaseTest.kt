@@ -34,8 +34,7 @@ class GetConcertUseCaseTest {
         }
     }
 
-    private fun getConcert() =
-        Concert(concertID, "name", null, null, null, null, false, null, null, null, null, null, null, null)
+    private fun getConcert() = Concert.Builder(concertID).build()
 
     @Test
     fun getConcert_whenFavorite_returnFavoriteTrue() {
