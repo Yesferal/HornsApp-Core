@@ -14,6 +14,12 @@ import org.mockito.Mockito
 import org.mockito.Mockito.times
 import org.mockito.Mockito.verify
 
+/**
+ * This class will test [ConcertRepositoryImpl]
+ *
+ * @author Yesferal
+ * Copyright © 2021 HornsApp. All rights reserved.
+ */
 class ConcertRepositoryImplTest: MockitoTest {
 
     lateinit var concertRepositoryImpl: ConcertRepositoryImpl

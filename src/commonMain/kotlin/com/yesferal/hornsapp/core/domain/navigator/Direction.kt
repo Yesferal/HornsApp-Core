@@ -6,8 +6,8 @@ class Direction private constructor(
 ) {
 
     class Build {
-        var to: ScreenType = ScreenType.None
-        var parameter: NavViewData? = null
+        private var to: ScreenType = ScreenType.None
+        private var parameter: NavViewData? = null
 
         fun to(to: ScreenType): Build {
             this.to = to
