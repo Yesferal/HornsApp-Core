@@ -7,6 +7,9 @@ val libraryVersion = "0.4.2"
 group = "com.yesferal.hornsapp.core"
 version = libraryVersion
 
+// Libraries
+val mockitoVersion = "4.0.0"
+
 repositories {
     mavenCentral()
 }
@@ -28,7 +31,8 @@ kotlin {
         }
         sourceSets["jvmTest"].dependencies {
             implementation("junit:junit:4.13.2")
-            implementation("org.mockito:mockito-core:4.0.0")
+            implementation("org.mockito:mockito-core:$mockitoVersion")
+            implementation("org.mockito:mockito-inline:$mockitoVersion")
         }
     }
 

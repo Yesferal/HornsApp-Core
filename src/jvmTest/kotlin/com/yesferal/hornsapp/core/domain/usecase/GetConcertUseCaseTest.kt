@@ -11,6 +11,12 @@ import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
 
+/**
+ * This class will test [GetConcertUseCase]
+ *
+ * @author Yesferal
+ * Copyright © 2021 HornsApp. All rights reserved.
+ */
 class GetConcertUseCaseTest: MockitoTest {
 
     private val concertID = "12345"

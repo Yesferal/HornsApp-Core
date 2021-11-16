@@ -9,6 +9,12 @@ import org.mockito.Mock
 import org.mockito.Mockito.times
 import org.mockito.Mockito.verify
 
+/**
+ * This class will test [UpdateFavoriteConcertUseCase]
+ *
+ * @author Yesferal
+ * Copyright © 2021 HornsApp. All rights reserved.
+ */
 class UpdateFavoriteConcertUseCaseTest: MockitoTest {
 
     private val concertID = "12345"
