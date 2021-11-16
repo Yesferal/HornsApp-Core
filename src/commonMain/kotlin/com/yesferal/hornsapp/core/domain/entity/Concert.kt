@@ -16,7 +16,7 @@ data class Concert private constructor(
     val ticketingUrl: String?,
     val ticketingHost: String?
 ) {
-    class  Builder(val id: String) {
+    class Builder(val id: String) {
         private var name: String? = null
         private var headlinerImage: String? = null
         private var timeInMillis: Long? = null
@@ -84,7 +84,22 @@ data class Concert private constructor(
         }
 
         fun build(): Concert {
-            return Concert(id, name, headlinerImage, timeInMillis, genre, tags, isFavorite, description, trailerUrl, facebookUrl, venue, bands, ticketingUrl, ticketingHost)
+            return Concert(
+                id,
+                name,
+                headlinerImage,
+                timeInMillis,
+                genre,
+                tags,
+                isFavorite,
+                description,
+                trailerUrl,
+                facebookUrl,
+                venue,
+                bands,
+                ticketingUrl,
+                ticketingHost
+            )
         }
     }
 }

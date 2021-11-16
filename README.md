@@ -1,4 +1,5 @@
 [![](https://jitpack.io/v/Yesferal/HornsApp-Core.svg)](https://jitpack.io/#Yesferal/HornsApp-Core)
+[![Workflow for Kotlin Standard Action](https://github.com/Yesferal/HornsApp-Core/actions/workflows/ci.yml/badge.svg)](https://github.com/Yesferal/HornsApp-Core/actions/workflows/ci.yml)
 # Horns App - Kotlin Multiplatform
 This is a Kotlin Multiplatform that will be import in Android and iOS projects.
 
