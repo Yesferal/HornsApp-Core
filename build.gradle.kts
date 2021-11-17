@@ -26,7 +26,7 @@ kotlin {
     }
 
     sourceSets {
-        sourceSets["jvmMain"].dependencies {
+        sourceSets["commonMain"].dependencies {
             implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
         }
         sourceSets["jvmTest"].dependencies {
