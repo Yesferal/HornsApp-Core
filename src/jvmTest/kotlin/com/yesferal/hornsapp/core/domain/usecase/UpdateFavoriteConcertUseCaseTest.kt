@@ -24,9 +24,7 @@ class UpdateFavoriteConcertUseCaseTest: MockitoTest {
 
     private lateinit var updateFavoriteConcertUseCase: UpdateFavoriteConcertUseCase
 
-    private val favoriteConcert = Concert.Builder(concertID).isFavorite(true).build()
-
-    private val notFavoriteConcert = Concert.Builder(concertID).isFavorite(false).build()
+    private val concert = Concert.Builder(concertID).build()
 
     @Test
     fun givenUpdateFavoriteConcert_WhenFavorite_ThenInsertIt() {
@@ -35,10 +33,10 @@ class UpdateFavoriteConcertUseCaseTest: MockitoTest {
             updateFavoriteConcertUseCase = UpdateFavoriteConcertUseCase(concertRepository)
 
             // When
-            updateFavoriteConcertUseCase.invoke(favoriteConcert)
+            updateFavoriteConcertUseCase.invoke(concert, true)
 
             // Then
-            verify(concertRepository, times(1)).insertFavoriteConcert(favoriteConcert)
+            verify(concertRepository, times(1)).insertFavoriteConcert(concert)
         }
     }
 
@@ -49,10 +47,10 @@ class UpdateFavoriteConcertUseCaseTest: MockitoTest {
             updateFavoriteConcertUseCase = UpdateFavoriteConcertUseCase(concertRepository)
 
             // When
-            updateFavoriteConcertUseCase.invoke(notFavoriteConcert)
+            updateFavoriteConcertUseCase.invoke(concert, false)
 
             // Then
-            verify(concertRepository, times(1)).removeFavoriteConcert(notFavoriteConcert)
+            verify(concertRepository, times(1)).removeFavoriteConcert(concert)
         }
     }
 }
