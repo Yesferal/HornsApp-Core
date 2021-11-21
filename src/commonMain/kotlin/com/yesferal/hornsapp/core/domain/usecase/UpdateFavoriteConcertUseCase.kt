@@ -7,8 +7,10 @@ class UpdateFavoriteConcertUseCase(
     private val concertRepository: ConcertRepository
 ) {
     suspend operator fun invoke(
-        concert: Concert
+        concert: Concert,
+        isFavorite: Boolean
     ) {
+        concert.isFavorite = isFavorite
         return if (concert.isFavorite) {
             concertRepository.insertFavoriteConcert(concert)
         } else {
