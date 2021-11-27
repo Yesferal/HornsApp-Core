@@ -14,16 +14,16 @@ import com.yesferal.hornsapp.core.domain.util.HaResult
  * @author Yesferal
  */
 class GetUpcomingConcertsUseCase(
-    private val concertRepository: ConcertRepository
+    private val concertRepository: ConcertRepository,
+    private val filterConcertsByCategoryUseCase: FilterConcertsByCategoryUseCase
 ) {
     suspend operator fun invoke(categoryKey: String): HaResult<List<Concert>> {
         return when (val result = concertRepository.getConcerts()) {
             is HaResult.Success -> {
-                val filtered = result.value.filter {
-                    categoryKey == CategoryDrawer.ALL || it.tags?.contains(categoryKey) == true
-                }.sortedWith(compareBy {
-                    it.timeInMillis
-                })
+                val filtered = filterConcertsByCategoryUseCase(result.value, categoryKey)
+                    .sortedWith(compareBy {
+                        it.timeInMillis
+                    })
 
                 HaResult.Success(filtered)
             }

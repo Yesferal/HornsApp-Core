@@ -25,10 +25,14 @@ class GetUpcomingConcertsUseCaseTest: MockitoTest {
     @Mock
     lateinit var concertRepository: ConcertRepository
 
+    lateinit var filterConcertsByCategoryUseCase: FilterConcertsByCategoryUseCase
+
     lateinit var getUpcomingConcertsUseCase: GetUpcomingConcertsUseCase
 
     @Before
     override fun mockClasses() {
+        filterConcertsByCategoryUseCase = FilterConcertsByCategoryUseCase()
+
         runBlocking {
             Mockito.`when`(concertRepository.getConcerts())
                 .thenReturn(HaResult.Success(getConcerts()))
@@ -47,7 +51,7 @@ class GetUpcomingConcertsUseCaseTest: MockitoTest {
     fun givenGetConcerts_WhenAllTagsAreRequested_ThenReturnWholeList() {
         runBlocking {
             // Given
-            getUpcomingConcertsUseCase = GetUpcomingConcertsUseCase(concertRepository)
+            getUpcomingConcertsUseCase = GetUpcomingConcertsUseCase(concertRepository, filterConcertsByCategoryUseCase)
 
             // When
             val filter = CategoryDrawer.ALL
@@ -64,7 +68,7 @@ class GetUpcomingConcertsUseCaseTest: MockitoTest {
     fun givenGetConcerts_WhenATagIsRequested_ThenReturnTheListFiltered() {
         runBlocking {
             // Given
-            getUpcomingConcertsUseCase = GetUpcomingConcertsUseCase(concertRepository)
+            getUpcomingConcertsUseCase = GetUpcomingConcertsUseCase(concertRepository, filterConcertsByCategoryUseCase)
 
             // When
             val filter = METAL
@@ -90,7 +94,7 @@ class GetUpcomingConcertsUseCaseTest: MockitoTest {
     fun givenGetConcerts_WhenAreRequested_ThenReturnSortByTimeInMillis() {
         runBlocking {
             // Given
-            getUpcomingConcertsUseCase = GetUpcomingConcertsUseCase(concertRepository)
+            getUpcomingConcertsUseCase = GetUpcomingConcertsUseCase(concertRepository, filterConcertsByCategoryUseCase)
 
             // When
             val filter = CategoryDrawer.ALL
