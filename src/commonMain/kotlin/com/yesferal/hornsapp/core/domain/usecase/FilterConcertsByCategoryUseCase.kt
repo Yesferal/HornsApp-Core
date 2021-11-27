@@ -11,9 +11,11 @@ import com.yesferal.hornsapp.core.domain.entity.drawer.CategoryDrawer
  * @author Yesferal
  */
 class FilterConcertsByCategoryUseCase {
-    operator fun invoke(concerts: List<Concert>, categoryKey: String): List<Concert> {
-        return concerts.filter {
-            categoryKey == CategoryDrawer.ALL || it.tags?.contains(categoryKey) == true
-        }
+    operator fun invoke(concerts: List<Concert>, categoryKey: String?): List<Concert> {
+        return categoryKey?.let {
+            concerts.filter {
+                categoryKey == CategoryDrawer.ALL || it.tags?.contains(categoryKey) == true
+            }
+        }?: kotlin.run { emptyList() }
     }
 }

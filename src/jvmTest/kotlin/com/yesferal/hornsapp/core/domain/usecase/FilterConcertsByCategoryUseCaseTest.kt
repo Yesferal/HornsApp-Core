@@ -41,6 +41,20 @@ class FilterConcertsByCategoryUseCaseTest: MockitoTest {
     }
 
     @Test
+    fun givenFilter_WhenTagRequestedIsNull_ThenReturnEmptyList() {
+        // Given
+        filterConcertsByCategoryUseCase = FilterConcertsByCategoryUseCase()
+
+        // When
+        val filter: String? = null
+        val result = filterConcertsByCategoryUseCase.invoke(getConcerts(), filter)
+
+        // Then
+        val expected = 0
+        Assert.assertEquals(expected, result.size)
+    }
+
+    @Test
     fun givenFilter_WhenATagIsRequested_ThenReturnTheListFiltered() {
         // Given
         filterConcertsByCategoryUseCase = FilterConcertsByCategoryUseCase()
