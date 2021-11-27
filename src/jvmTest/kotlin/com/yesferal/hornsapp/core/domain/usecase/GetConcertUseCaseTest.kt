@@ -47,7 +47,7 @@ class GetConcertUseCaseTest: MockitoTest {
             getConcertUseCase = GetConcertUseCase(concertRepository, getFavoriteConcertsUseCase)
 
             // When
-            Mockito.`when`(concertRepository.getFavoriteConcert())
+            Mockito.`when`(concertRepository.getFavoriteConcerts())
                 .thenReturn(listOf(getConcert()))
             val result = getConcertUseCase.invoke(concertID)
 
@@ -65,7 +65,7 @@ class GetConcertUseCaseTest: MockitoTest {
             getConcertUseCase = GetConcertUseCase(concertRepository, getFavoriteConcertsUseCase)
 
             // When
-            Mockito.`when`(concertRepository.getFavoriteConcert())
+            Mockito.`when`(concertRepository.getFavoriteConcerts())
                 .thenReturn(listOf())
             val result = getConcertUseCase.invoke(concertID)
 

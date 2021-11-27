@@ -1,3 +1,4 @@
+/* Copyright © 2021 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.data.repository
 
 import com.yesferal.hornsapp.core.data.abstraction.storage.ConcertStorageDataSource
@@ -6,6 +7,11 @@ import com.yesferal.hornsapp.core.domain.abstraction.ConcertRepository
 import com.yesferal.hornsapp.core.domain.entity.Concert
 import com.yesferal.hornsapp.core.domain.util.HaResult
 
+/**
+ * This implement the interface [ConcertRepository]
+ *
+ * @author Yesferal
+ */
 class ConcertRepositoryImpl(
     private val concertStorageDataSource: ConcertStorageDataSource,
     private val concertRemoteDataSource: ConcertRemoteDataSource
@@ -27,7 +33,7 @@ class ConcertRepositoryImpl(
         id: String
     ): HaResult<Concert> = concertRemoteDataSource.getConcert(id)
 
-    override suspend fun getFavoriteConcert(): List<Concert> {
+    override suspend fun getFavoriteConcerts(): List<Concert> {
         return concertStorageDataSource.getFavoriteConcerts()
     }
 
