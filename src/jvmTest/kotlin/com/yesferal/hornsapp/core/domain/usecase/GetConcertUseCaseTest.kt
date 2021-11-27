@@ -1,3 +1,4 @@
+/* Copyright © 2021 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.usecase
 
 import com.yesferal.hornsapp.core.MockitoTest
@@ -15,7 +16,6 @@ import org.mockito.Mockito
  * This class will test [GetConcertUseCase]
  *
  * @author Yesferal
- * Copyright © 2021 HornsApp. All rights reserved.
  */
 class GetConcertUseCaseTest: MockitoTest {
 

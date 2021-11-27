@@ -1,3 +1,4 @@
+/* Copyright © 2021 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.data.repository
 
 import com.yesferal.hornsapp.core.MockitoTest
@@ -18,7 +19,6 @@ import org.mockito.Mockito.verify
  * This class will test [ConcertRepositoryImpl]
  *
  * @author Yesferal
- * Copyright © 2021 HornsApp. All rights reserved.
  */
 class ConcertRepositoryImplTest: MockitoTest {
 

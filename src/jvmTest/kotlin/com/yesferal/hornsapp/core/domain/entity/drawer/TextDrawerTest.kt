@@ -1,3 +1,4 @@
+/* Copyright © 2021 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.entity.drawer
 
 import com.yesferal.hornsapp.core.MockitoTest
@@ -13,7 +14,6 @@ import org.mockito.Mockito
  * This class will test [TextDrawer]
  *
  * @author Yesferal
- * Copyright © 2021 HornsApp. All rights reserved.
  */
 class TextDrawerTest : MockitoTest {
 
