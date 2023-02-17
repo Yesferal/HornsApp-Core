@@ -13,12 +13,12 @@ class ScreenTypeTest {
     @Test
     fun givenAnScreenType_WhenParseAsDirection_ThenResultShouldContainsType() {
         // Given
-        val screenType = ScreenType.Home
+        val screenType = ScreenType.HOME
 
         // When
         val result = screenType.asDirection()
 
         // Then
-        Assert.assertEquals(ScreenType.Home, result.to)
+        Assert.assertEquals(ScreenType.HOME, result.to)
     }
 }
