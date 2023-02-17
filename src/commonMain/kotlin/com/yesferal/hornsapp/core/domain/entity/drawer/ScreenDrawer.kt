@@ -4,7 +4,8 @@ data class ScreenDrawer(
     private val key: String?,
     val title: TextDrawer?,
     val subtitle: TextDrawer?,
-    val condition: ConditionDrawer?
+    val condition: ConditionDrawer?,
+    val deeplink: String?
 ) {
     enum class Type {
         // Fragments
