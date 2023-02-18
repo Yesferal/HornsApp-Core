@@ -10,7 +10,7 @@ enum class ScreenType {
     PROFILE,
     NONE;
 
-    fun asDirection(): Direction {
-        return Direction.Build().to(this).build()
+    fun asDirection(navViewData: NavViewData? = null): Direction {
+        return Direction.Build().to(this).with(navViewData).build()
     }
 }

@@ -3,7 +3,7 @@ plugins {
     id("maven-publish")
 }
 
-val libraryVersion = "0.5.4"
+val libraryVersion = "0.5.5"
 group = "com.yesferal.hornsapp.core"
 version = libraryVersion
 

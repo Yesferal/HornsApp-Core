@@ -25,7 +25,7 @@ class Direction private constructor(
             return this
         }
 
-        fun with(parameter: NavViewData): Build {
+        fun with(parameter: NavViewData?): Build {
             this.parameter = parameter
 
             return this
