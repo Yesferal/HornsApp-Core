@@ -2,6 +2,7 @@ package com.yesferal.hornsapp.core.domain.entity.drawer
 
 data class ScreenDrawer(
     private val key: String?,
+    val id: String?,
     val title: TextDrawer?,
     val subtitle: TextDrawer?,
     val condition: ConditionDrawer?,
