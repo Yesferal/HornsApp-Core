@@ -15,6 +15,7 @@ enum class ScreenType {
     FAN_PAGE,
     MAP,
     WEB_VIEW,
+    CALENDAR,
     NONE;
 
     fun asDirection(navViewData: NavViewData? = null): Direction {
