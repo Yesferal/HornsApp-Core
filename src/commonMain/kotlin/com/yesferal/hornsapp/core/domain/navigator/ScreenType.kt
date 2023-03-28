@@ -11,11 +11,12 @@ enum class ScreenType {
     BAND_DETAIL,
     SETTING,
     PROFILE,
+    MAP,
     VIDEO,
     FAN_PAGE,
-    MAP,
     WEB_VIEW,
     CALENDAR,
+    MESSAGE,
     NONE;
 
     fun asDirection(navViewData: NavViewData? = null): Direction {
