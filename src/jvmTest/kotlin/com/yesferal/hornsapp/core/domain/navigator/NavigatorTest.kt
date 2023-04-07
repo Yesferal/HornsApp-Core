@@ -5,11 +5,11 @@ import org.junit.Assert
 import org.junit.Test
 
 /**
- * This class will test [Direction]
+ * This class will test [Navigator]
  *
  * @author Yesferal
  */
-class DirectionTest {
+class NavigatorTest {
 
     private val navViewData = object : NavViewData {
         override val id: String = "1234"
@@ -19,7 +19,7 @@ class DirectionTest {
     @Test
     fun given_aDirectionBuilder_withData_ThenGetDataFromResult() {
         // Given
-        val directionBuilder = Direction.Build()
+        val directionBuilder = Navigator.Builder()
             .to(ScreenType.HOME)
             .with(navViewData)
 
@@ -35,7 +35,7 @@ class DirectionTest {
     @Test
     fun given_aDirectionBuilder_withStringOrigin_ThenGetSameOriginFromResult() {
         // Given
-        val directionBuilder = Direction.Build()
+        val directionBuilder = Navigator.Builder()
             .to("HOME")
 
         // When
@@ -48,7 +48,7 @@ class DirectionTest {
     @Test
     fun given_aDirectionBuilder_withScreenTypeOrigin_ThenGetSameOriginFromResult() {
         // Given
-        val directionBuilder = Direction.Build()
+        val directionBuilder = Navigator.Builder()
             .to(ScreenType.HOME)
 
         // When
