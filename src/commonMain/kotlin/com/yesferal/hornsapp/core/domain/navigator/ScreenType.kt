@@ -18,8 +18,4 @@ enum class ScreenType {
     CALENDAR,
     MESSAGE,
     NONE;
-
-    fun asDirection(navViewData: NavViewData? = null): Direction {
-        return Direction.Build().to(this).with(navViewData).build()
-    }
 }

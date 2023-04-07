@@ -2,11 +2,13 @@ package com.yesferal.hornsapp.core.domain.navigator
 
 class Direction private constructor(
     val to: ScreenType,
+    val popBackStackId: Int?,
     val parameter: NavViewData?
 ) {
 
     class Build {
         private var to: ScreenType = ScreenType.NONE
+        private var popBackStackId: Int? = null
         private var parameter: NavViewData? = null
 
         fun to(to: ScreenType): Build {
@@ -25,6 +27,12 @@ class Direction private constructor(
             return this
         }
 
+        fun popBackStack(popBackStackId: Int): Build {
+            this.popBackStackId = popBackStackId
+
+            return this
+        }
+
         fun with(parameter: NavViewData?): Build {
             this.parameter = parameter
 
@@ -32,7 +40,7 @@ class Direction private constructor(
         }
 
         fun build(): Direction {
-            return Direction(to, parameter)
+            return Direction(to, popBackStackId, parameter)
         }
     }
 }
