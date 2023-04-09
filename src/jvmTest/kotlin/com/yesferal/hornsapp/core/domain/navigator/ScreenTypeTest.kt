@@ -16,7 +16,7 @@ class ScreenTypeTest {
         val screenType = ScreenType.HOME
 
         // When
-        val result = screenType.asDirection()
+        val result = Navigator.Builder().to(screenType).build()
 
         // Then
         Assert.assertEquals(ScreenType.HOME, result.to)

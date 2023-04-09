@@ -1,14 +1,15 @@
+/* Copyright © 2022 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.navigator
 
 class Navigator private constructor(
     val to: ScreenType,
     val popBackStackId: Int?,
-    val parameter: NavViewData?,
+    val parameters: Parameters?,
 ) {
     class Builder {
         private var to: ScreenType = ScreenType.NONE
         private var popBackStackId: Int? = null
-        private var parameter: NavViewData? = null
+        private var parameters: Parameters? = null
 
         fun to(to: ScreenType): Builder {
             this.to = to
@@ -32,14 +33,20 @@ class Navigator private constructor(
             return this
         }
 
-        fun with(parameter: NavViewData?): Builder {
-            this.parameter = parameter
+        fun with(navViewData: NavViewData): Builder {
+            this.parameters = navViewData.toMap()
+
+            return this
+        }
+
+        fun with(parameters: Parameters?): Builder {
+            this.parameters = parameters
 
             return this
         }
 
         fun build(): Navigator {
-            return Navigator(to, popBackStackId, parameter)
+            return Navigator(to, popBackStackId, parameters)
         }
     }
 }

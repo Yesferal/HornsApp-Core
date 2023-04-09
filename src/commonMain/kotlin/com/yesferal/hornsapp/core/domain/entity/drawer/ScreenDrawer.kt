@@ -1,4 +1,7 @@
+/* Copyright © 2022 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.entity.drawer
+
+import com.yesferal.hornsapp.core.domain.navigator.Parameters
 
 data class ScreenDrawer(
     private val key: String?,
@@ -6,7 +9,8 @@ data class ScreenDrawer(
     val title: TextDrawer?,
     val subtitle: TextDrawer?,
     val condition: ConditionDrawer?,
-    val deeplink: String?
+    val color: String?,
+    val navigation: Parameters?
 ) {
     enum class Type {
         // Fragments

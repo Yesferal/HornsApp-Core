@@ -11,9 +11,8 @@ import org.junit.Test
  */
 class NavigatorTest {
 
-    private val navViewData = object : NavViewData {
-        override val id: String = "1234"
-        override val name: String? = null
+    private val parameters = Parameters().apply {
+        put("id", "1234")
     }
 
     @Test
@@ -21,15 +20,15 @@ class NavigatorTest {
         // Given
         val directionBuilder = Navigator.Builder()
             .to(ScreenType.HOME)
-            .with(navViewData)
+            .with(parameters)
 
         // When
         val result = directionBuilder.build()
 
         // Then
         Assert.assertEquals(ScreenType.HOME, result.to)
-        Assert.assertEquals(navViewData, result.parameter)
-        Assert.assertEquals(navViewData.id, result.parameter?.id)
+        Assert.assertEquals(parameters, result.parameters)
+        Assert.assertEquals(parameters.getString("id"), result.parameters?.getString("id"))
     }
 
     @Test
