@@ -10,7 +10,8 @@ data class ScreenDrawer(
     val subtitle: TextDrawer?,
     val condition: ConditionDrawer?,
     val color: String?,
-    val navigation: Parameters?
+    val navigation: Parameters?,
+    val icon: String?
 ) {
     enum class Type {
         // Fragments
