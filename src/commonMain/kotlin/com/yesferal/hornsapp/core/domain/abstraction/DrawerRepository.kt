@@ -1,11 +1,11 @@
+/* Copyright © 2023 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.abstraction
 
-import com.yesferal.hornsapp.core.domain.entity.drawer.CategoryDrawer
-import com.yesferal.hornsapp.core.domain.entity.drawer.ScreenDrawer
+import com.yesferal.hornsapp.core.domain.entity.drawer.ViewDrawer
 import kotlinx.coroutines.flow.Flow
 
 interface DrawerRepository {
-    fun getHomeDrawer(): Flow<List<ScreenDrawer>>
-    fun getNewestDrawer(): Flow<List<ScreenDrawer>>
-    fun getCategoryDrawer(): Flow<List<CategoryDrawer>>
+    fun getHomeDrawer(): Flow<List<ViewDrawer>>
+    fun getNewestDrawer(): Flow<List<ViewDrawer>>
+    fun getCategoryDrawer(): Flow<List<ViewDrawer>>
 }

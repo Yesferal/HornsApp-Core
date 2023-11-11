@@ -3,15 +3,11 @@ package com.yesferal.hornsapp.core.domain.entity.drawer
 
 import com.yesferal.hornsapp.core.domain.navigator.Parameters
 
-data class ScreenDrawer(
-    private val key: String?,
-    val id: String?,
-    val title: TextDrawer?,
-    val subtitle: TextDrawer?,
-    val condition: ConditionDrawer?,
-    val color: String?,
-    val navigation: Parameters?,
-    val icon: String?
+data class ViewDrawer(
+        private val key: String?,
+        val data: DataDrawer?,
+        val condition: ConditionDrawer?,
+        val navigation: Parameters?,
 ) {
     enum class Type {
         // Fragments

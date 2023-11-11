@@ -11,15 +11,15 @@ import org.mockito.MockedStatic
 import org.mockito.Mockito
 
 /**
- * This class will test [TextDrawer]
+ * This class will test [LocalizedString]
  *
  * @author Yesferal
  */
-class TextDrawerTest : MockitoTest {
+class LocalizedStringTest : MockitoTest {
 
     private lateinit var locator: MockedStatic<Locator>
 
-    private lateinit var textDrawer: TextDrawer
+    private lateinit var localizedString: LocalizedString
 
     @Before
     override fun mockClasses() {
@@ -34,36 +34,36 @@ class TextDrawerTest : MockitoTest {
     @Test
     fun givenTextDrawer_WhenEnLocator_ThenReturnEnglishCopy() {
         // Given
-        textDrawer = TextDrawer("englishName", "spanishName")
+        localizedString = LocalizedString("englishName", "spanishName")
 
         // When
         locator.`when`<String> { Locator.language() }.thenReturn("en")
 
         // Then
-        Assert.assertEquals("englishName", textDrawer.text)
+        Assert.assertEquals("englishName", localizedString.text)
     }
 
     @Test
     fun givenTextDrawer_WhenEsLocator_ThenReturnSpanishCopy() {
         // Given
-        textDrawer = TextDrawer("englishName", "spanishName")
+        localizedString = LocalizedString("englishName", "spanishName")
 
         // When
         locator.`when`<String> { Locator.language() }.thenReturn("es")
 
         // Then
-        Assert.assertEquals("spanishName", textDrawer.text)
+        Assert.assertEquals("spanishName", localizedString.text)
     }
 
     @Test
     fun givenTextDrawer_WhenRandomLocator_ThenReturnEnglishCopy() {
         // Given
-        textDrawer = TextDrawer("englishName", "spanishName")
+        localizedString = LocalizedString("englishName", "spanishName")
 
         // When
         locator.`when`<String> { Locator.language() }.thenReturn("fr")
 
         // Then
-        Assert.assertEquals("englishName", textDrawer.text)
+        Assert.assertEquals("englishName", localizedString.text)
     }
 }

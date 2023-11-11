@@ -1,8 +1,9 @@
+/* Copyright © 2023 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.entity.drawer
 
 import com.yesferal.hornsapp.core.domain.common.Locator
 
-data class TextDrawer(private val en: String?, private val es: String?) {
+data class LocalizedString(private val en: String?, private val es: String?) {
     val text: String?
         get() = when (Locator.language()) {
             "en" -> en

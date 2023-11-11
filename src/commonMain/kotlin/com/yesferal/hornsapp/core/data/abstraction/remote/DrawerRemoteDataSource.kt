@@ -1,11 +1,11 @@
+/* Copyright © 2023 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.data.abstraction.remote
 
-import com.yesferal.hornsapp.core.domain.entity.drawer.CategoryDrawer
-import com.yesferal.hornsapp.core.domain.entity.drawer.ScreenDrawer
+import com.yesferal.hornsapp.core.domain.entity.drawer.ViewDrawer
 import kotlinx.coroutines.flow.Flow
 
 interface DrawerRemoteDataSource {
-    val homeDrawer: Flow<List<ScreenDrawer>>
-    val newestDrawer: Flow<List<ScreenDrawer>>
-    val categoryDrawer: Flow<List<CategoryDrawer>>
+    val homeDrawer: Flow<List<ViewDrawer>>
+    val newestDrawer: Flow<List<ViewDrawer>>
+    val categoryDrawer: Flow<List<ViewDrawer>>
 }
