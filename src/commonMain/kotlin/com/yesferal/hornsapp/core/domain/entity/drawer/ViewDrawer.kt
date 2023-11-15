@@ -19,6 +19,7 @@ data class ViewDrawer(
         CAROUSEL_VIEW,
         VERTICAL_LIST_VIEW,
         HOME_CARD_VIEW,
+        AD_VIEW,
 
         UNDETERMINED
     }
@@ -31,6 +32,7 @@ data class ViewDrawer(
             Type.CAROUSEL_VIEW.name -> Type.CAROUSEL_VIEW
             Type.VERTICAL_LIST_VIEW.name -> Type.VERTICAL_LIST_VIEW
             Type.HOME_CARD_VIEW.name -> Type.HOME_CARD_VIEW
+            Type.AD_VIEW.name -> Type.AD_VIEW
             else -> Type.UNDETERMINED
         }
 }
