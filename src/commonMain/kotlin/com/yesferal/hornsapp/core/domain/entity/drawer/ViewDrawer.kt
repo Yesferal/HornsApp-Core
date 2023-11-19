@@ -18,7 +18,8 @@ data class ViewDrawer(
         // Views
         CAROUSEL_VIEW,
         VERTICAL_LIST_VIEW,
-        HOME_CARD_VIEW,
+        ICON_HOME_CARD_VIEW,
+        IMAGE_HOME_CARD_VIEW,
         AD_VIEW,
 
         UNDETERMINED
@@ -31,7 +32,8 @@ data class ViewDrawer(
             Type.FAVORITE_FRAGMENT.name -> Type.FAVORITE_FRAGMENT
             Type.CAROUSEL_VIEW.name -> Type.CAROUSEL_VIEW
             Type.VERTICAL_LIST_VIEW.name -> Type.VERTICAL_LIST_VIEW
-            Type.HOME_CARD_VIEW.name -> Type.HOME_CARD_VIEW
+            Type.ICON_HOME_CARD_VIEW.name -> Type.ICON_HOME_CARD_VIEW
+            Type.IMAGE_HOME_CARD_VIEW.name -> Type.IMAGE_HOME_CARD_VIEW
             Type.AD_VIEW.name -> Type.AD_VIEW
             else -> Type.UNDETERMINED
         }

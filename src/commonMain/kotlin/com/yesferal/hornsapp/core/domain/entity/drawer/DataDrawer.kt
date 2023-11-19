@@ -4,7 +4,10 @@ package com.yesferal.hornsapp.core.domain.entity.drawer
 class DataDrawer(
         val title: LocalizedString?,
         val subtitle: LocalizedString?,
-        val color: String?,
+        val description: LocalizedString?,
+        val textColor: String?,
+        val backgroundColor: String?,
+        val imageUrl: String?,
         val icon: String?,
-        val height: Int
+        val height: Int?
 )
