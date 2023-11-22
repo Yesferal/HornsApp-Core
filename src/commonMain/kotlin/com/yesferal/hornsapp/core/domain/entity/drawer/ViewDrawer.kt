@@ -21,6 +21,10 @@ data class ViewDrawer(
         ICON_HOME_CARD_VIEW,
         IMAGE_HOME_CARD_VIEW,
         AD_VIEW,
+        TITLE_REVIEW_CARD_VIEW,
+        SUBTITLE_REVIEW_CARD_VIEW,
+        DESCRIPTION_REVIEW_CARD_VIEW,
+        IMAGE_REVIEW_CARD_VIEW,
 
         UNDETERMINED
     }
@@ -35,6 +39,10 @@ data class ViewDrawer(
             Type.ICON_HOME_CARD_VIEW.name -> Type.ICON_HOME_CARD_VIEW
             Type.IMAGE_HOME_CARD_VIEW.name -> Type.IMAGE_HOME_CARD_VIEW
             Type.AD_VIEW.name -> Type.AD_VIEW
+            Type.TITLE_REVIEW_CARD_VIEW.name -> Type.TITLE_REVIEW_CARD_VIEW
+            Type.SUBTITLE_REVIEW_CARD_VIEW.name -> Type.SUBTITLE_REVIEW_CARD_VIEW
+            Type.DESCRIPTION_REVIEW_CARD_VIEW.name -> Type.DESCRIPTION_REVIEW_CARD_VIEW
+            Type.IMAGE_REVIEW_CARD_VIEW.name -> Type.IMAGE_REVIEW_CARD_VIEW
             else -> Type.UNDETERMINED
         }
 }

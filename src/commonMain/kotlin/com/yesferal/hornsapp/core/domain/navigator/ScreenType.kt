@@ -17,5 +17,6 @@ enum class ScreenType {
     WEB_VIEW,
     CALENDAR,
     MESSAGE,
+    REVIEW,
     NONE;
 }
