@@ -25,6 +25,7 @@ data class ViewDrawer(
         SUBTITLE_REVIEW_CARD_VIEW,
         DESCRIPTION_REVIEW_CARD_VIEW,
         IMAGE_REVIEW_CARD_VIEW,
+        BUTTON_CARD_VIEW,
 
         UNDETERMINED
     }
@@ -43,6 +44,7 @@ data class ViewDrawer(
             Type.SUBTITLE_REVIEW_CARD_VIEW.name -> Type.SUBTITLE_REVIEW_CARD_VIEW
             Type.DESCRIPTION_REVIEW_CARD_VIEW.name -> Type.DESCRIPTION_REVIEW_CARD_VIEW
             Type.IMAGE_REVIEW_CARD_VIEW.name -> Type.IMAGE_REVIEW_CARD_VIEW
+            Type.BUTTON_CARD_VIEW.name -> Type.BUTTON_CARD_VIEW
             else -> Type.UNDETERMINED
         }
 }
