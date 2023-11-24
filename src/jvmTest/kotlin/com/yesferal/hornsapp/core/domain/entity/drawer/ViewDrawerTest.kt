@@ -76,7 +76,7 @@ class ViewDrawerTest : MockitoTest {
     @Test
     fun givenViewDrawer_WhenThereIsFalseVisibility_ThenShouldRenderTrue() {
         // Given
-        val key = "KEY"
+        val key = ViewDrawer.Type.NEWEST_FRAGMENT
         val data = DataDrawer(
             null,
             null,
@@ -90,7 +90,7 @@ class ViewDrawerTest : MockitoTest {
         )
 
         // When
-        viewDrawer = ViewDrawer(key, data, null, null)
+        viewDrawer = ViewDrawer(key.name, data, null, null)
 
         // Then
         Assert.assertEquals(ViewDrawer.Type.VISIBILITY_GONE_CARD_VIEW, viewDrawer.type)
