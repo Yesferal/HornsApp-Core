@@ -17,18 +17,20 @@ class ViewDrawerTest : MockitoTest {
     @Test
     fun givenViewDrawer_WhenThereIsNotData_ThenShouldRenderTrue() {
         // Given
+        val key = ViewDrawer.Type.NEWEST_FRAGMENT
         val data = null
 
         // When
-        viewDrawer = ViewDrawer("", data, null, null)
+        viewDrawer = ViewDrawer(key.name, data, null, null)
 
         // Then
-        Assert.assertEquals(true, viewDrawer.shouldRender())
+        Assert.assertEquals(key, viewDrawer.type)
     }
 
     @Test
     fun givenViewDrawer_WhenThereIsNotVisibility_ThenShouldRenderTrue() {
         // Given
+        val key = ViewDrawer.Type.NEWEST_FRAGMENT
         val data = DataDrawer(
             null,
             null,
@@ -42,15 +44,16 @@ class ViewDrawerTest : MockitoTest {
         )
 
         // When
-        viewDrawer = ViewDrawer("", data, null, null)
+        viewDrawer = ViewDrawer(key.name, data, null, null)
 
         // Then
-        Assert.assertEquals(true, viewDrawer.shouldRender())
+        Assert.assertEquals(key, viewDrawer.type)
     }
 
     @Test
     fun givenViewDrawer_WhenThereIsTrueVisibility_ThenShouldRenderTrue() {
         // Given
+        val key = ViewDrawer.Type.NEWEST_FRAGMENT
         val data = DataDrawer(
             null,
             null,
@@ -64,15 +67,16 @@ class ViewDrawerTest : MockitoTest {
         )
 
         // When
-        viewDrawer = ViewDrawer("", data, null, null)
+        viewDrawer = ViewDrawer(key.name, data, null, null)
 
         // Then
-        Assert.assertEquals(true, viewDrawer.shouldRender())
+        Assert.assertEquals(key, viewDrawer.type)
     }
 
     @Test
     fun givenViewDrawer_WhenThereIsFalseVisibility_ThenShouldRenderTrue() {
         // Given
+        val key = "KEY"
         val data = DataDrawer(
             null,
             null,
@@ -86,9 +90,9 @@ class ViewDrawerTest : MockitoTest {
         )
 
         // When
-        viewDrawer = ViewDrawer("", data, null, null)
+        viewDrawer = ViewDrawer(key, data, null, null)
 
         // Then
-        Assert.assertEquals(false, viewDrawer.shouldRender())
+        Assert.assertEquals(ViewDrawer.Type.VISIBILITY_GONE_CARD_VIEW, viewDrawer.type)
     }
 }
