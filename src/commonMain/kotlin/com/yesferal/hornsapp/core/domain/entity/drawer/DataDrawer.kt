@@ -9,5 +9,6 @@ class DataDrawer(
         val backgroundColor: String?,
         val imageUrl: String?,
         val icon: String?,
-        val height: Int?
+        val height: Int?,
+        val visibility: Boolean?
 )

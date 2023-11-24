@@ -47,4 +47,8 @@ data class ViewDrawer(
             Type.BUTTON_CARD_VIEW.name -> Type.BUTTON_CARD_VIEW
             else -> Type.UNDETERMINED
         }
+
+    fun shouldRender(): Boolean {
+        return data?.visibility != false
+    }
 }
