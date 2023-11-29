@@ -5,6 +5,7 @@ data class Concert private constructor(
     val name: String?,
     val headlinerImage: String?,
     val timeInMillis: Long?,
+    val totalDays: Int?,
     val genre: String?,
     val tags: List<String>?,
     var isFavorite: Boolean,
@@ -30,6 +31,7 @@ data class Concert private constructor(
         private var bands: List<Band>? = null
         private var ticketingUrl: String? = null
         private var ticketingHost: String? = null
+        private var totalDays: Int? = null
 
         fun addName(name: String?) = apply {
             this.name = name
@@ -83,12 +85,17 @@ data class Concert private constructor(
             this.ticketingHost = ticketingHost
         }
 
+        fun addTotalDays(totalDays: Int?) = apply {
+            this.totalDays = totalDays
+        }
+
         fun build(): Concert {
             return Concert(
                 id,
                 name,
                 headlinerImage,
                 timeInMillis,
+                totalDays,
                 genre,
                 tags,
                 isFavorite,
