@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.5.21"
+    kotlin("multiplatform") version "2.1.0"
     id("maven-publish")
 }
 
@@ -27,7 +27,7 @@ kotlin {
 
     sourceSets {
         sourceSets["commonMain"].dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
         }
         sourceSets["jvmTest"].dependencies {
             implementation("junit:junit:4.13.2")
