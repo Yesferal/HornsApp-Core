@@ -3,9 +3,10 @@ package com.yesferal.hornsapp.core.domain.entity
 data class Band (
     val id: String,
     val name: String?,
-    val description: String?,
-    val membersImage: String?,
+    val about: String?,
     val logoImage: String?,
+    val membersImage: String?,
     val country: String?,
-    val genre: String?
+    val formerIn: Int?,
+    val genres: List<String>?,
 )

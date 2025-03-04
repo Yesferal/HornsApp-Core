@@ -2,6 +2,7 @@
 package com.yesferal.hornsapp.core.domain.entity.drawer
 
 data class AppDrawer(
+        val platform: String?,
         val versionCode: Long?,
         val screens: List<ViewDrawer>?,
         val newest: List<ViewDrawer>?,

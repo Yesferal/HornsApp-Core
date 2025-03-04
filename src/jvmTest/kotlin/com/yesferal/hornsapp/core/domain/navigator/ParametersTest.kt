@@ -65,9 +65,9 @@ class ParametersTest {
         val parameters = Parameters()
 
         // When
-        parameters.put("Venue", Venue("id", "name", "shortName", "latitude", "longitude"))
+        parameters.put("Venue", Venue("id", "name", "description", "mapSearchName", "latitude", "longitude", ""))
 
         // Then
-        Assert.assertEquals(Venue("id", "name", "shortName", "latitude", "longitude"), parameters.get("Venue"))
+        Assert.assertEquals(Venue("id", "name", "description", "mapSearchName", "latitude", "longitude", ""), parameters.get("Venue"))
     }
 }

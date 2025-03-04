@@ -1,5 +1,8 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+
 plugins {
-    kotlin("multiplatform") version "2.1.0"
+    kotlin("multiplatform") version "1.9.25"
     id("maven-publish")
 }
 
@@ -7,19 +10,19 @@ val libraryVersion = "0.5.20"
 group = "com.yesferal.hornsapp.core"
 version = libraryVersion
 
-// Libraries
-val mockitoVersion = "4.0.0"
-
 repositories {
     mavenCentral()
 }
 
 kotlin {
+    tasks.withType<KotlinJvmCompile>().configureEach {
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_17)
+            freeCompilerArgs.add("-opt-in=kotlin.RequiresOptIn")
+        }
+    }
 
     jvm {
-        compilations.all {
-            kotlinOptions.jvmTarget = "1.8"
-        }
         testRuns["test"].executionTask.configure {
             useJUnit()
         }
@@ -27,12 +30,12 @@ kotlin {
 
     sourceSets {
         sourceSets["commonMain"].dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
         }
         sourceSets["jvmTest"].dependencies {
             implementation("junit:junit:4.13.2")
-            implementation("org.mockito:mockito-core:$mockitoVersion")
-            implementation("org.mockito:mockito-inline:$mockitoVersion")
+            implementation("org.mockito:mockito-core:5.15.2")
+            implementation("org.mockito:mockito-inline:5.2.0")
         }
     }
 

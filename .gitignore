@@ -16,3 +16,4 @@ gradle-app.setting
 *.iml
 .idea/
 .kotlin
+local.properties

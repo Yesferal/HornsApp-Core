@@ -3,9 +3,9 @@ package com.yesferal.hornsapp.core.domain.entity.drawer
 
 data class ConditionDrawer(
     private val key: String?,
-    val value: String?,
+    val defaultValues: List<String>?,
+    val filterBy: String?,
     val count: Int?,
-    val defaultValues: List<String>?
 ){
     enum class Type {
         SORT_BY_NEWEST_DATE,

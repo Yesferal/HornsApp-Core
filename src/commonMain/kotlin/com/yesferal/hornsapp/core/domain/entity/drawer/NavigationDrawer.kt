@@ -3,5 +3,5 @@ package com.yesferal.hornsapp.core.domain.entity.drawer
 
 class NavigationDrawer(
     val key: String?,
-    val params: Map<String, String>?
+    val parameters: Map<String, String>?,
 )

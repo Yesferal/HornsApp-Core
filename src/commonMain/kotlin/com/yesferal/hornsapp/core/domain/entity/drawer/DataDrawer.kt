@@ -5,10 +5,10 @@ class DataDrawer(
         val title: LocalizedString?,
         val subtitle: LocalizedString?,
         val description: LocalizedString?,
+        val icon: String?,
+        val imageUrl: String?,
+        val height: Int?,
         val textColor: String?,
         val backgroundColor: String?,
-        val imageUrl: String?,
-        val icon: String?,
-        val height: Int?,
         val visibility: Boolean?
 )
