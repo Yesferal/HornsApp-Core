@@ -1,7 +1,7 @@
 /* Copyright © 2023 HornsApp. All rights reserved. */
-package com.yesferal.hornsapp.core.domain.entity.drawer
+package com.yesferal.hornsapp.core.domain.entity.render
 
-data class ConditionDrawer(
+data class ConditionRender(
     private val key: String?,
     val values: List<String>?,
     val filter: String?,

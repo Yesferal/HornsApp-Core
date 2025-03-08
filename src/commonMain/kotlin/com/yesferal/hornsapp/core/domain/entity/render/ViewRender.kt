@@ -1,13 +1,13 @@
 /* Copyright © 2022 HornsApp. All rights reserved. */
-package com.yesferal.hornsapp.core.domain.entity.drawer
+package com.yesferal.hornsapp.core.domain.entity.render
 
 import com.yesferal.hornsapp.core.domain.navigator.Parameters
 
-data class ViewDrawer(
-        private val key: String?,
-        val data: DataDrawer?,
-        val condition: ConditionDrawer?,
-        val navigation: Parameters?,
+data class ViewRender(
+    private val key: String?,
+    val data: DataRender?,
+    val condition: ConditionRender?,
+    val navigation: Parameters?,
 ) {
     enum class Type {
         // Fragments

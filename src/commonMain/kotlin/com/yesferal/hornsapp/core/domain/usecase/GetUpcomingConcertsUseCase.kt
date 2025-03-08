@@ -3,12 +3,12 @@ package com.yesferal.hornsapp.core.domain.usecase
 
 import com.yesferal.hornsapp.core.domain.abstraction.ConcertRepository
 import com.yesferal.hornsapp.core.domain.entity.Concert
-import com.yesferal.hornsapp.core.domain.entity.drawer.CategoryDrawer
+import com.yesferal.hornsapp.core.domain.entity.render.CategoryRender
 import com.yesferal.hornsapp.core.domain.util.HaResult
 
 /**
  * This Use Case Provide the upcoming concerts
- * depending on a [CategoryDrawer.key]
+ * depending on a [CategoryRender.key]
  * and sorted by [Concert.timeInMillis]
  *
  * @author Yesferal

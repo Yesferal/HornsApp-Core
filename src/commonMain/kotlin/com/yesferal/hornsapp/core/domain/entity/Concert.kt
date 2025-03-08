@@ -1,6 +1,6 @@
 package com.yesferal.hornsapp.core.domain.entity
 
-import com.yesferal.hornsapp.core.domain.entity.drawer.ViewDrawer
+import com.yesferal.hornsapp.core.domain.entity.render.ViewRender
 
 data class Concert constructor(
     val id: String,
@@ -12,7 +12,7 @@ data class Concert constructor(
     val headlinerImageUrl: String?,
     val ticketingName: String?,
     val ticketingUrl: String?,
-    val links: List<ViewDrawer>?,
+    val links: List<ViewRender>?,
     val tags: List<String>?,
     val venue: Venue?,
     val state: State?,
@@ -28,7 +28,7 @@ data class Concert constructor(
         private var headlinerImageUrl: String? = null
         private var ticketingName: String? = null
         private var ticketingUrl: String? = null
-        private var links: List<ViewDrawer>? = null
+        private var links: List<ViewRender>? = null
         private var tags: List<String>? = null
         private var venue: Venue? = null
         private var state: State? = null
@@ -67,7 +67,7 @@ data class Concert constructor(
             this.ticketingUrl = ticketingUrl
         }
 
-        fun addLinks(links: List<ViewDrawer>?) = apply {
+        fun addLinks(links: List<ViewRender>?) = apply {
             this.links = links
         }
 

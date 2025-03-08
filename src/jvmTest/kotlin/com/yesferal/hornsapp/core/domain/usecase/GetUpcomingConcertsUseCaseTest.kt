@@ -4,7 +4,7 @@ package com.yesferal.hornsapp.core.domain.usecase
 import com.yesferal.hornsapp.core.MockitoTest
 import com.yesferal.hornsapp.core.domain.abstraction.ConcertRepository
 import com.yesferal.hornsapp.core.domain.entity.Concert
-import com.yesferal.hornsapp.core.domain.entity.drawer.CategoryDrawer
+import com.yesferal.hornsapp.core.domain.entity.render.CategoryRender
 import com.yesferal.hornsapp.core.domain.util.HaResult
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -54,7 +54,7 @@ class GetUpcomingConcertsUseCaseTest: MockitoTest {
             getUpcomingConcertsUseCase = GetUpcomingConcertsUseCase(concertRepository, filterConcertsByCategoryUseCase)
 
             // When
-            val filter = CategoryDrawer.ALL
+            val filter = CategoryRender.ALL
             val result = getUpcomingConcertsUseCase.invoke(filter)
 
             // Then
@@ -97,7 +97,7 @@ class GetUpcomingConcertsUseCaseTest: MockitoTest {
             getUpcomingConcertsUseCase = GetUpcomingConcertsUseCase(concertRepository, filterConcertsByCategoryUseCase)
 
             // When
-            val filter = CategoryDrawer.ALL
+            val filter = CategoryRender.ALL
             val result = getUpcomingConcertsUseCase.invoke(filter)
 
             // Then

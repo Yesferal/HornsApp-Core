@@ -1,8 +1,9 @@
 /* Copyright © 2021 HornsApp. All rights reserved. */
-package com.yesferal.hornsapp.core.domain.entity.drawer
+package com.yesferal.hornsapp.core.domain.entity.render
 
 import com.yesferal.hornsapp.core.MockitoTest
 import com.yesferal.hornsapp.core.domain.common.Locator
+import com.yesferal.hornsapp.core.domain.entity.util.LocalizedString
 import org.junit.After
 import org.junit.Assert
 import org.junit.Before
@@ -32,7 +33,7 @@ class LocalizedStringTest : MockitoTest {
     }
 
     @Test
-    fun givenTextDrawer_WhenEnLocator_ThenReturnEnglishCopy() {
+    fun givenLocalizedString_WhenEnLocator_ThenReturnEnglishCopy() {
         // Given
         localizedString = LocalizedString("englishName", "spanishName")
 
@@ -44,7 +45,7 @@ class LocalizedStringTest : MockitoTest {
     }
 
     @Test
-    fun givenTextDrawer_WhenEsLocator_ThenReturnSpanishCopy() {
+    fun givenLocalizedString_WhenEsLocator_ThenReturnSpanishCopy() {
         // Given
         localizedString = LocalizedString("englishName", "spanishName")
 
@@ -56,7 +57,7 @@ class LocalizedStringTest : MockitoTest {
     }
 
     @Test
-    fun givenTextDrawer_WhenRandomLocator_ThenReturnEnglishCopy() {
+    fun givenLocalizedString_WhenRandomLocator_ThenReturnEnglishCopy() {
         // Given
         localizedString = LocalizedString("englishName", "spanishName")
 
