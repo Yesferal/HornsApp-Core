@@ -7,7 +7,9 @@ data class LocalizedString(private val en: String?, private val es: String?) {
     val text: String?
         get() = when (Locator.language()) {
             "en" -> en
-            "es" -> es
+            "es" -> {
+                es ?: en
+            }
             else -> en
         }
 }

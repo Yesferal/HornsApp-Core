@@ -6,6 +6,6 @@ data class AppRender(
         val docVersion: Long?,
         val appVersion: Long?,
         val screens: List<ViewRender>?,
-        val newest: List<ViewRender>?,
+        val views: List<ViewRender>?,
         val categories: List<ViewRender>?
 )

@@ -9,8 +9,11 @@ class DataRender(
         val description: LocalizedString?,
         val icon: String?,
         val imageUrl: String?,
+        val width: Int?,
         val height: Int?,
         val textColor: String?,
         val backgroundColor: String?,
-        val visibility: Boolean?
+        val elevation: Boolean?,
+        val ctas: List<CtaRender>,
+        val visibility: Boolean?,
 )
