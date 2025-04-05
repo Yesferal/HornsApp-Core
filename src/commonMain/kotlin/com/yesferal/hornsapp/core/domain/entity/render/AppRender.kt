@@ -5,7 +5,6 @@ data class AppRender(
         val platform: String?,
         val docVersion: Long?,
         val appVersion: Long?,
-        val screens: List<ViewRender>?,
-        val views: List<ViewRender>?,
+        val screens: List<ScreenRender>?,
         val categories: List<ViewRender>?
 )

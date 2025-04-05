@@ -1,17 +1,19 @@
 /* Copyright © 2022 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.navigator
 
+import com.yesferal.hornsapp.core.domain.entity.render.ScreenRender
+
 class Navigator private constructor(
-    val to: ScreenType,
+    val to: ScreenRender.Type,
     val popBackStackId: Int?,
     val parameters: Parameters?,
 ) {
     class Builder {
-        private var to: ScreenType = ScreenType.NONE
+        private var to: ScreenRender.Type = ScreenRender.Type.UNDETERMINED_SCREEN
         private var popBackStackId: Int? = null
         private var parameters: Parameters? = null
 
-        fun to(to: ScreenType): Builder {
+        fun to(to: ScreenRender.Type): Builder {
             this.to = to
 
             return this
@@ -19,9 +21,9 @@ class Navigator private constructor(
 
         fun to(to: String): Builder {
             try {
-                this.to = ScreenType.valueOf(to)
+                this.to = ScreenRender.Type.valueOf(to)
             } catch (e: Exception) {
-                this.to = ScreenType.NONE
+                this.to = ScreenRender.Type.UNDETERMINED_SCREEN
             }
 
             return this

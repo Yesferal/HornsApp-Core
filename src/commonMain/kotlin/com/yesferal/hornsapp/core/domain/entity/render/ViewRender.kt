@@ -10,13 +10,6 @@ data class ViewRender(
     val navigation: Parameters?,
 ) {
     enum class Type {
-        // Fragments
-        NEWEST_FRAGMENT,
-        UPCOMING_FRAGMENT,
-        FAVORITE_FRAGMENT,
-        SCREEN_RENDER_FRAGMENT,
-        STAGE_LINEUP_FRAGMENT,
-
         // Views
         ROW_VIEW,
         COLUMN_VIEW,
@@ -43,12 +36,6 @@ data class ViewRender(
             }
 
             return when (key) {
-                Type.NEWEST_FRAGMENT.name -> Type.NEWEST_FRAGMENT
-                Type.UPCOMING_FRAGMENT.name -> Type.UPCOMING_FRAGMENT
-                Type.FAVORITE_FRAGMENT.name -> Type.FAVORITE_FRAGMENT
-                Type.SCREEN_RENDER_FRAGMENT.name -> Type.SCREEN_RENDER_FRAGMENT
-                Type.STAGE_LINEUP_FRAGMENT.name -> Type.STAGE_LINEUP_FRAGMENT
-
                 Type.ROW_VIEW.name -> Type.ROW_VIEW
                 Type.COLUMN_VIEW.name -> Type.COLUMN_VIEW
                 Type.CARD_VIEW.name -> Type.CARD_VIEW
@@ -61,6 +48,7 @@ data class ViewRender(
                 Type.DESCRIPTION_REVIEW_CARD_VIEW.name -> Type.DESCRIPTION_REVIEW_CARD_VIEW
                 Type.IMAGE_REVIEW_CARD_VIEW.name -> Type.IMAGE_REVIEW_CARD_VIEW
                 Type.BUTTON_CARD_VIEW.name -> Type.BUTTON_CARD_VIEW
+
                 else -> Type.UNDETERMINED
             }
         }
