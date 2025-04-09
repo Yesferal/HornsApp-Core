@@ -1,16 +1,21 @@
 package com.yesferal.hornsapp.core.domain.entity
 
 class Lineup(
-    val day: String?,
+    val title: String?,
+    val days: List<DailyLineup>?
+)
+
+class DailyLineup(
+    val dateTimeInMillis: Long?,
     val stages: List<Stage>?
 )
 
 class Stage(
     val title: String?,
-    val performances: List<Performance>?
+    val events: List<Event>?
 )
 
-class Performance(
+class Event(
     val id: String?,
     val title: String?,
     val subtitle: String?,
