@@ -17,7 +17,7 @@ class ViewRenderTest : MockitoTest {
     @Test
     fun givenViewRender_WhenThereIsNotData_ThenShouldRenderTrue() {
         // Given
-        val key = ViewRender.Type.NEWEST_FRAGMENT
+        val key = ViewRender.Type.CARD_VIEW
         val data = null
 
         // When
@@ -30,7 +30,7 @@ class ViewRenderTest : MockitoTest {
     @Test
     fun givenViewRender_WhenThereIsNotVisibility_ThenShouldRenderTrue() {
         // Given
-        val key = ViewRender.Type.NEWEST_FRAGMENT
+        val key = ViewRender.Type.CARD_VIEW
         val data = DataRender(
             null,
             null,
@@ -40,7 +40,11 @@ class ViewRenderTest : MockitoTest {
             null,
             null,
             null,
-            visibility = null
+            null,
+            visibility = null,
+            backgroundColor = null,
+            elevation = null,
+            ctas = null,
         )
 
         // When
@@ -53,7 +57,7 @@ class ViewRenderTest : MockitoTest {
     @Test
     fun givenViewRender_WhenThereIsTrueVisibility_ThenShouldRenderTrue() {
         // Given
-        val key = ViewRender.Type.NEWEST_FRAGMENT
+        val key = ViewRender.Type.CARD_VIEW
         val data = DataRender(
             null,
             null,
@@ -63,7 +67,11 @@ class ViewRenderTest : MockitoTest {
             null,
             null,
             null,
-            visibility = true
+            null,
+            visibility = true,
+            backgroundColor = null,
+            elevation = null,
+            ctas = null,
         )
 
         // When
@@ -76,7 +84,7 @@ class ViewRenderTest : MockitoTest {
     @Test
     fun givenViewRender_WhenThereIsFalseVisibility_ThenShouldRenderTrue() {
         // Given
-        val key = ViewRender.Type.NEWEST_FRAGMENT
+        val key = ViewRender.Type.CARD_VIEW
         val data = DataRender(
             null,
             null,
@@ -86,7 +94,11 @@ class ViewRenderTest : MockitoTest {
             null,
             null,
             null,
-            visibility = false
+            null,
+            visibility = false,
+            backgroundColor = null,
+            elevation = null,
+            ctas = null,
         )
 
         // When
