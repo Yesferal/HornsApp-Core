@@ -22,7 +22,7 @@ import org.mockito.Mockito.verify
  */
 class ConcertRepositoryImplTest: MockitoTest {
 
-    lateinit var concertRepositoryImpl: ConcertRepositoryImpl
+    private lateinit var concertRepositoryImpl: ConcertRepositoryImpl
 
     @Mock
     lateinit var concertStorageDataSource: ConcertStorageDataSource
