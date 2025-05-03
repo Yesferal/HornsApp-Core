@@ -1,10 +1,12 @@
 /* Copyright © 2023 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.entity.render
 
+import com.yesferal.hornsapp.core.domain.entity.util.LocalizedString
+
 data class ScreenRender(
     private val key: String?,
-    val data: DataRender?,
-    val id: String?,
+    val _id: String?,
+    val title: LocalizedString?,
     val views: List<ViewRender>?,
     val visibility: Boolean?,
 ) {
@@ -25,7 +27,7 @@ data class ScreenRender(
         WEB_VIEW_SCREEN,
         CALENDAR_SCREEN,
         MESSAGE_SCREEN,
-        SCREEN_RENDER_SCREEN,
+        RENDER_SCREEN,
         LINEUP_SCREEN,
         STAGE_LINEUP_SCREEN,
 
@@ -56,7 +58,7 @@ data class ScreenRender(
                 Type.WEB_VIEW_SCREEN.name -> Type.WEB_VIEW_SCREEN
                 Type.CALENDAR_SCREEN.name -> Type.CALENDAR_SCREEN
                 Type.MESSAGE_SCREEN.name -> Type.MESSAGE_SCREEN
-                Type.SCREEN_RENDER_SCREEN.name -> Type.SCREEN_RENDER_SCREEN
+                Type.RENDER_SCREEN.name -> Type.RENDER_SCREEN
                 Type.LINEUP_SCREEN.name -> Type.LINEUP_SCREEN
                 Type.STAGE_LINEUP_SCREEN.name -> Type.STAGE_LINEUP_SCREEN
 

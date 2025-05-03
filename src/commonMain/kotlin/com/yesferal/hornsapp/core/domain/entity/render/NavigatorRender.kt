@@ -1,7 +1,7 @@
-/* Copyright © 2023 HornsApp. All rights reserved. */
-package com.yesferal.hornsapp.core.domain.navigator
+/* Copyright © 2025 HornsApp. All rights reserved. */
+package com.yesferal.hornsapp.core.domain.entity.render
 
-class Parameters(
+class NavigatorRender(
     val key: String? = null,
     val parameters: MutableMap<String, Any> = mutableMapOf()
 ) {

@@ -3,9 +3,8 @@ package com.yesferal.hornsapp.core.domain.entity.render
 
 data class ChildrenRender(
     val key: String?,
-    val values: List<String>?,
-    val filter: String?,
-    val sort: String?,
+    val filter: FilterRender?,
+    val sort: List<String>?,
     val take: Int?,
 ){
     enum class Type {
@@ -23,3 +22,8 @@ data class ChildrenRender(
             else -> Type.UNDETERMINED
         }
 }
+
+data class FilterRender(
+    val events: List<String>?,
+    val categories: List<String>?
+)

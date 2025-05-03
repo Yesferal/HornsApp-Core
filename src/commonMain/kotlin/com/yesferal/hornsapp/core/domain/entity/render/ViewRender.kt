@@ -1,13 +1,12 @@
 /* Copyright © 2022 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.entity.render
 
-import com.yesferal.hornsapp.core.domain.navigator.Parameters
-
 data class ViewRender(
     private val key: String?,
     val data: DataRender?,
+    val style: StyleRender?,
     val children: ChildrenRender?,
-    val navigation: Parameters?,
+    val navigation: NavigatorRender?,
 ) {
     enum class Type {
         // Views
@@ -54,6 +53,6 @@ data class ViewRender(
         }
 
     private fun shouldRender(): Boolean {
-        return data?.visibility != false
+        return style?.visibility != false
     }
 }

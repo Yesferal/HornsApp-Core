@@ -1,17 +1,18 @@
 /* Copyright © 2022 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.navigator
 
+import com.yesferal.hornsapp.core.domain.entity.render.NavigatorRender
 import com.yesferal.hornsapp.core.domain.entity.render.ScreenRender
 
 class Navigator private constructor(
     val to: ScreenRender.Type,
     val popBackStackId: Int?,
-    val parameters: Parameters?,
+    val navigatorRender: NavigatorRender?,
 ) {
     class Builder {
         private var to: ScreenRender.Type = ScreenRender.Type.UNDETERMINED_SCREEN
         private var popBackStackId: Int? = null
-        private var parameters: Parameters? = null
+        private var navigatorRender: NavigatorRender? = null
 
         fun to(to: ScreenRender.Type): Builder {
             this.to = to
@@ -36,19 +37,19 @@ class Navigator private constructor(
         }
 
         fun with(navViewData: NavViewData): Builder {
-            this.parameters = navViewData.toMap()
+            this.navigatorRender = navViewData.toMap()
 
             return this
         }
 
-        fun with(parameters: Parameters?): Builder {
-            this.parameters = parameters
+        fun with(navigatorRender: NavigatorRender?): Builder {
+            this.navigatorRender = navigatorRender
 
             return this
         }
 
         fun build(): Navigator {
-            return Navigator(to, popBackStackId, parameters)
+            return Navigator(to, popBackStackId, navigatorRender)
         }
     }
 }

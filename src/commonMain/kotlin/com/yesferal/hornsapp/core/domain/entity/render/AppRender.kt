@@ -3,9 +3,9 @@ package com.yesferal.hornsapp.core.domain.entity.render
 
 data class AppRender(
         val platform: String?,
+        val appId: String?,
         val docVersion: Long?,
         val appVersion: Long?,
-        val appId: String?,
         val screens: List<ScreenRender>?,
-        val categories: List<ViewRender>?
+        val categories: List<CategoryRender>?
 )

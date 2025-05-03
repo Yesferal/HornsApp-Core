@@ -3,8 +3,8 @@ package com.yesferal.hornsapp.core.data.repository
 
 import com.yesferal.hornsapp.core.data.abstraction.remote.RenderRemoteDataSource
 import com.yesferal.hornsapp.core.domain.abstraction.RenderRepository
+import com.yesferal.hornsapp.core.domain.entity.render.CategoryRender
 import com.yesferal.hornsapp.core.domain.entity.render.ScreenRender
-import com.yesferal.hornsapp.core.domain.entity.render.ViewRender
 import kotlinx.coroutines.flow.Flow
 
 class RenderRepositoryImpl(private val renderRemoteDataSource: RenderRemoteDataSource): RenderRepository {
@@ -13,7 +13,7 @@ class RenderRepositoryImpl(private val renderRemoteDataSource: RenderRemoteDataS
         return renderRemoteDataSource.homeRender
     }
 
-    override fun getCategoryRender(): Flow<List<ViewRender>> {
+    override fun getCategoryRender(): Flow<List<CategoryRender>> {
         return renderRemoteDataSource.categoryRender
     }
 }

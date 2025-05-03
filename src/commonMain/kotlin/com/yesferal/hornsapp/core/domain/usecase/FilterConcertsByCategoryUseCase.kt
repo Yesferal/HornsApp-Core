@@ -6,15 +6,15 @@ import com.yesferal.hornsapp.core.domain.entity.render.CategoryRender
 
 /**
  * This Use Case Provide concerts filtered
- * depending on a [CategoryRender.key]
+ * depending on a [CategoryRender]
  *
  * @author Yesferal
  */
 class FilterConcertsByCategoryUseCase {
-    operator fun invoke(concerts: List<Concert>, categoryKey: String?): List<Concert> {
-        return categoryKey?.let {
+    operator fun invoke(concerts: List<Concert>, categoryId: String?): List<Concert> {
+        return categoryId?.let {
             concerts.filter {
-                categoryKey == CategoryRender.ALL || it.tags?.contains(categoryKey) == true
+                categoryId == CategoryRender.ALL || it.categories?.contains(categoryId) == true
             }
         }?: kotlin.run { emptyList() }
     }

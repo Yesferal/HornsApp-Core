@@ -1,3 +1,4 @@
+/* Copyright © 2025 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.entity
 
 import com.yesferal.hornsapp.core.domain.entity.render.ViewRender
@@ -13,7 +14,7 @@ data class Concert constructor(
     val ticketingName: String?,
     val ticketingUrl: String?,
     val links: List<ViewRender>?,
-    val tags: List<String>?,
+    val categories: List<String>?,
     val venue: Venue?,
     val state: State?,
     val bands: List<Band>?,
@@ -30,7 +31,7 @@ data class Concert constructor(
         private var ticketingName: String? = null
         private var ticketingUrl: String? = null
         private var links: List<ViewRender>? = null
-        private var tags: List<String>? = null
+        private var categories: List<String>? = null
         private var venue: Venue? = null
         private var state: State? = null
         private var bands: List<Band>? = null
@@ -73,8 +74,8 @@ data class Concert constructor(
             this.links = links
         }
 
-        fun addTags(tags: List<String>?) = apply {
-            this.tags = tags
+        fun addCategories(addCategories: List<String>?) = apply {
+            this.categories = addCategories
         }
 
         fun addVenue(venue: Venue?) = apply {
@@ -109,7 +110,7 @@ data class Concert constructor(
                 ticketingName,
                 ticketingUrl,
                 links,
-                tags,
+                categories,
                 venue,
                 state,
                 bands,
