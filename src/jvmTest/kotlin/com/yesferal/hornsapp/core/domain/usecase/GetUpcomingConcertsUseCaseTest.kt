@@ -40,11 +40,11 @@ class GetUpcomingConcertsUseCaseTest: MockitoTest {
     }
 
     private fun getConcerts() = listOf(
-        Concert.Builder("1").addTimeInMillis(100).addTags(listOf(METAL, "ROCK")).build(),
-        Concert.Builder("2").addTimeInMillis(90).addTags(listOf("ROCK")).build(),
+        Concert.Builder("1").addTimeInMillis(100).addCategories(listOf(METAL, "ROCK")).build(),
+        Concert.Builder("2").addTimeInMillis(90).addCategories(listOf("ROCK")).build(),
         Concert.Builder("3").addTimeInMillis(80).build(),
-        Concert.Builder("4").addTimeInMillis(70).addTags(listOf("JAZZ", METAL)).build(),
-        Concert.Builder("5").addTimeInMillis(60).addTags(listOf(METAL)).build()
+        Concert.Builder("4").addTimeInMillis(70).addCategories(listOf("JAZZ", METAL)).build(),
+        Concert.Builder("5").addTimeInMillis(60).addCategories(listOf(METAL)).build()
     )
 
     @Test
@@ -79,14 +79,14 @@ class GetUpcomingConcertsUseCaseTest: MockitoTest {
             Assert.assertEquals(true, result is HaResult.Success)
             Assert.assertEquals(expected, (result as HaResult.Success).value.size)
 
-            Assert.assertNotEquals(null, result.value[0].tags)
-            Assert.assertEquals(true, result.value[0].tags!!.contains(METAL))
+            Assert.assertNotEquals(null, result.value[0].categories)
+            Assert.assertEquals(true, result.value[0].categories!!.contains(METAL))
 
-            Assert.assertNotEquals(null, result.value[1].tags)
-            Assert.assertEquals(true, result.value[1].tags!!.contains(METAL))
+            Assert.assertNotEquals(null, result.value[1].categories)
+            Assert.assertEquals(true, result.value[1].categories!!.contains(METAL))
 
-            Assert.assertNotEquals(null, result.value[2].tags)
-            Assert.assertEquals(true, result.value[2].tags!!.contains(METAL))
+            Assert.assertNotEquals(null, result.value[2].categories)
+            Assert.assertEquals(true, result.value[2].categories!!.contains(METAL))
         }
     }
 

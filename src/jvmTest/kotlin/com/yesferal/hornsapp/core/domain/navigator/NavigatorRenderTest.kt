@@ -2,15 +2,16 @@
 package com.yesferal.hornsapp.core.domain.navigator
 
 import com.yesferal.hornsapp.core.domain.entity.Venue
+import com.yesferal.hornsapp.core.domain.entity.render.NavigatorRender
 import org.junit.Assert
 import org.junit.Test
 
-class ParametersTest {
+class NavigatorRenderTest {
 
     @Test
     fun given_aParameters_whenItHasString_ThenGetIt() {
         // Given
-        val parameters = Parameters()
+        val parameters = NavigatorRender()
 
         // When
         parameters.put("id", "1")
@@ -23,7 +24,7 @@ class ParametersTest {
     @Test
     fun given_aParameters_whenItHasBoolean_ThenGetIt() {
         // Given
-        val parameters = Parameters()
+        val parameters = NavigatorRender()
 
         // When
         parameters.put("id", true)
@@ -36,7 +37,7 @@ class ParametersTest {
     @Test
     fun given_aParameters_whenItHasLong_ThenGetIt() {
         // Given
-        val parameters = Parameters()
+        val parameters = NavigatorRender()
 
         // When
         parameters.put("id", 1L)
@@ -49,7 +50,7 @@ class ParametersTest {
     @Test
     fun given_aParameters_whenItHasString_ThenGetItAsString() {
         // Given
-        val parameters = Parameters()
+        val parameters = NavigatorRender()
 
         // When
         parameters.put("id", "1")
@@ -62,7 +63,7 @@ class ParametersTest {
     @Test
     fun given_aParameters_whenItHasObject_ThenGetObject() {
         // Given
-        val parameters = Parameters()
+        val parameters = NavigatorRender()
 
         // When
         parameters.put("Venue", Venue("id", "name", "description", "mapSearchName", "latitude", "longitude", ""))

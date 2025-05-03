@@ -1,6 +1,7 @@
 /* Copyright © 2021 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.navigator
 
+import com.yesferal.hornsapp.core.domain.entity.render.NavigatorRender
 import com.yesferal.hornsapp.core.domain.entity.render.ScreenRender
 import org.junit.Assert
 import org.junit.Test
@@ -12,7 +13,7 @@ import org.junit.Test
  */
 class NavigatorTest {
 
-    private val parameters = Parameters().apply {
+    private val parameters = NavigatorRender().apply {
         put("id", "1234")
     }
 
@@ -28,8 +29,8 @@ class NavigatorTest {
 
         // Then
         Assert.assertEquals(ScreenRender.Type.HOME_SCREEN, result.to)
-        Assert.assertEquals(parameters, result.parameters)
-        Assert.assertEquals(parameters.getString("id"), result.parameters?.getString("id"))
+        Assert.assertEquals(parameters, result.navigatorRender)
+        Assert.assertEquals(parameters.getString("id"), result.navigatorRender?.getString("id"))
     }
 
     @Test

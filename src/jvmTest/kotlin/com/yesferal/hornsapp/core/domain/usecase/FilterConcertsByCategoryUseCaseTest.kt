@@ -19,11 +19,11 @@ class FilterConcertsByCategoryUseCaseTest: MockitoTest {
     lateinit var filterConcertsByCategoryUseCase: FilterConcertsByCategoryUseCase
 
     private fun getConcerts() = listOf(
-        Concert.Builder("1").addTimeInMillis(100).addTags(listOf(METAL, "ROCK")).build(),
-        Concert.Builder("2").addTimeInMillis(90).addTags(listOf("ROCK")).build(),
+        Concert.Builder("1").addTimeInMillis(100).addCategories(listOf(METAL, "ROCK")).build(),
+        Concert.Builder("2").addTimeInMillis(90).addCategories(listOf("ROCK")).build(),
         Concert.Builder("3").addTimeInMillis(80).build(),
-        Concert.Builder("4").addTimeInMillis(70).addTags(listOf("JAZZ", METAL)).build(),
-        Concert.Builder("5").addTimeInMillis(60).addTags(listOf(METAL)).build()
+        Concert.Builder("4").addTimeInMillis(70).addCategories(listOf("JAZZ", METAL)).build(),
+        Concert.Builder("5").addTimeInMillis(60).addCategories(listOf(METAL)).build()
     )
 
     @Test
@@ -66,13 +66,13 @@ class FilterConcertsByCategoryUseCaseTest: MockitoTest {
         // Then
         val expected = 3
         Assert.assertEquals(expected, result.size)
-        Assert.assertNotEquals(null, result[0].tags)
-        Assert.assertEquals(true, result[0].tags!!.contains(METAL))
+        Assert.assertNotEquals(null, result[0].categories)
+        Assert.assertEquals(true, result[0].categories!!.contains(METAL))
 
-        Assert.assertNotEquals(null, result[1].tags)
-        Assert.assertEquals(true, result[1].tags!!.contains(METAL))
+        Assert.assertNotEquals(null, result[1].categories)
+        Assert.assertEquals(true, result[1].categories!!.contains(METAL))
 
-        Assert.assertNotEquals(null, result[2].tags)
-        Assert.assertEquals(true, result[2].tags!!.contains(METAL))
+        Assert.assertNotEquals(null, result[2].categories)
+        Assert.assertEquals(true, result[2].categories!!.contains(METAL))
     }
 }

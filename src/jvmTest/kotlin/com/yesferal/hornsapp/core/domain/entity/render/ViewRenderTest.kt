@@ -21,7 +21,7 @@ class ViewRenderTest : MockitoTest {
         val data = null
 
         // When
-        viewRender = ViewRender(key.name, data, null, null)
+        viewRender = ViewRender(key.name, data, null, null, null)
 
         // Then
         Assert.assertEquals(key, viewRender.type)
@@ -38,17 +38,10 @@ class ViewRenderTest : MockitoTest {
             null,
             null,
             null,
-            null,
-            null,
-            null,
-            visibility = null,
-            backgroundColor = null,
-            elevation = null,
-            ctas = null,
         )
 
         // When
-        viewRender = ViewRender(key.name, data, null, null)
+        viewRender = ViewRender(key.name, data, null, null, null)
 
         // Then
         Assert.assertEquals(key, viewRender.type)
@@ -65,44 +58,30 @@ class ViewRenderTest : MockitoTest {
             null,
             null,
             null,
-            null,
-            null,
-            null,
-            visibility = true,
-            backgroundColor = null,
-            elevation = null,
-            ctas = null,
         )
 
         // When
-        viewRender = ViewRender(key.name, data, null, null)
+        viewRender = ViewRender(key.name, data, null, null, null)
 
         // Then
         Assert.assertEquals(key, viewRender.type)
     }
 
     @Test
-    fun givenViewRender_WhenThereIsFalseVisibility_ThenShouldRenderTrue() {
+    fun givenViewRender_WhenThereIsFalseVisibility_ThenShouldNotRenderTrue() {
         // Given
         val key = ViewRender.Type.CARD_VIEW
-        val data = DataRender(
-            null,
-            null,
-            null,
-            null,
+        val style = StyleRender(
             null,
             null,
             null,
             null,
             null,
             visibility = false,
-            backgroundColor = null,
-            elevation = null,
-            ctas = null,
         )
 
         // When
-        viewRender = ViewRender(key.name, data, null, null)
+        viewRender = ViewRender(key.name, null, style, null, null)
 
         // Then
         Assert.assertEquals(ViewRender.Type.VISIBILITY_GONE_CARD_VIEW, viewRender.type)
