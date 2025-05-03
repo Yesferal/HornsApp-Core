@@ -12,10 +12,10 @@ class DailyLineup(
 
 class Stage(
     val title: String?,
-    val events: List<Event>?
+    val activities: List<LineupActivity>?
 )
 
-class Event(
+class LineupActivity(
     val id: String?,
     val title: String?,
     val subtitle: String?,

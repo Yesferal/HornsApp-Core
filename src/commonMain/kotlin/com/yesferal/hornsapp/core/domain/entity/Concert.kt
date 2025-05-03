@@ -17,7 +17,7 @@ data class Concert constructor(
     val categories: List<String>?,
     val venue: Venue?,
     val state: State?,
-    val bands: List<Band>?,
+    val activities: List<Band>?,
     val lineup: Lineup?,
     var isFavorite: Boolean,
 ) {
@@ -34,7 +34,7 @@ data class Concert constructor(
         private var categories: List<String>? = null
         private var venue: Venue? = null
         private var state: State? = null
-        private var bands: List<Band>? = null
+        private var activities: List<Band>? = null
         private var isFavorite: Boolean = false
         private  var lineup: Lineup? = null
 
@@ -86,8 +86,8 @@ data class Concert constructor(
             this.state = state
         }
 
-        fun addBands(bands: List<Band>?) = apply {
-            this.bands = bands
+        fun addActivities(activities: List<Band>?) = apply {
+            this.activities = activities
         }
 
         fun isFavorite(isFavorite: Boolean) = apply {
@@ -113,7 +113,7 @@ data class Concert constructor(
                 categories,
                 venue,
                 state,
-                bands,
+                activities,
                 lineup,
                 isFavorite
             )
