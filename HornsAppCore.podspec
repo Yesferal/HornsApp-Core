@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
   spec.name = 'HornsAppCore'
-  spec.version = '0.5.4'
-  spec.homepage = 'https://github.com/Yesferal/HornsApp-KotlinMultiplatform'
-  spec.source = { :git => "https://github.com/Yesferal/HornsApp-KotlinMultiplatform.git", :tag => spec.version }
+  spec.version = '1.3.4'
+  spec.homepage = 'https://github.com/Yesferal/HornsApp-Core'
+  spec.source = { :git => "https://github.com/Yesferal/HornsApp-Core.git", :tag => spec.version }
   spec.authors = { "Yesferal Cueva" => "yesferal@gmail.com" }
   spec.license = { :type => "Apache-2.0", :file => "LICENSE" }
   spec.summary = 'HornsApp Kotlin Multiplatform Core Library'
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks = "build/bin/xcframework/releaseFramework/#{spec.name}.xcframework"
   spec.libraries = "c++"
   spec.module_name = "#{spec.name}_core"
-  spec.ios.deployment_target = '12.0'
+  spec.ios.deployment_target = '15.0'
 
   spec.prepare_command = "sh ./script/prepare_command.sh"
 
