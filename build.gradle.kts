@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
-    kotlin("multiplatform") version "1.9.25"
+    kotlin("multiplatform") version "2.1.21"
     id("maven-publish")
 }
 
@@ -30,7 +30,7 @@ kotlin {
 
     sourceSets {
         sourceSets["commonMain"].dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
         }
         sourceSets["jvmTest"].dependencies {
             implementation("junit:junit:4.13.2")
