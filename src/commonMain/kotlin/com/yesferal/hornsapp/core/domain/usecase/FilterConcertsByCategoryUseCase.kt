@@ -2,7 +2,7 @@
 package com.yesferal.hornsapp.core.domain.usecase
 
 import com.yesferal.hornsapp.core.domain.entity.Concert
-import com.yesferal.hornsapp.core.domain.entity.render.CategoryRender
+import com.yesferal.hornsapp.core.domain.entity.render.CategoryRenderContract
 
 /**
  * This Use Case Provide concerts filtered
@@ -14,7 +14,7 @@ class FilterConcertsByCategoryUseCase {
     operator fun invoke(concerts: List<Concert>, categoryId: String?): List<Concert> {
         return categoryId?.let {
             concerts.filter {
-                categoryId == CategoryRender.ALL || it.categories?.contains(categoryId) == true
+                categoryId == CategoryRenderContract.ALL || it.categories?.contains(categoryId) == true
             }
         }?: kotlin.run { emptyList() }
     }

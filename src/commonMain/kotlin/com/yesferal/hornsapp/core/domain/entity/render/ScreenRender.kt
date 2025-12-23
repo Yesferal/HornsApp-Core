@@ -1,15 +1,15 @@
 /* Copyright © 2023 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.entity.render
 
-import com.yesferal.hornsapp.core.domain.entity.util.LocalizedString
+import com.yesferal.hornsapp.core.domain.entity.util.LocalizedStringContract
 
-data class ScreenRender(
-    private val key: String?,
-    val _id: String?,
-    val title: LocalizedString?,
-    val views: List<ViewRender>?,
-    val visibility: Boolean?,
-) {
+interface ScreenRenderContract {
+    val key: String?
+    val _id: String?
+    val title: LocalizedStringContract?
+    val views: List<ViewRenderContract>?
+    val visibility: Boolean?
+
     enum class Type {
         SPLASH_SCREEN,
         ON_BOARDING_SCREEN,
@@ -70,3 +70,11 @@ data class ScreenRender(
         return visibility != false
     }
 }
+
+data class ScreenRender(
+    override val key: String?,
+    override val _id: String?,
+    override val title: LocalizedStringContract?,
+    override val views: List<ViewRenderContract>?,
+    override val visibility: Boolean?
+) : ScreenRenderContract

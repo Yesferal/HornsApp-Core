@@ -12,12 +12,12 @@ import org.junit.Test
  */
 class ViewRenderTest : MockitoTest {
 
-    private lateinit var viewRender: ViewRender
+    private lateinit var viewRender: ViewRenderContract
 
     @Test
     fun givenViewRender_WhenThereIsNotData_ThenShouldRenderTrue() {
         // Given
-        val key = ViewRender.Type.CARD_VIEW
+        val key = ViewRenderContract.Type.CARD_VIEW
         val data = null
 
         // When
@@ -30,7 +30,7 @@ class ViewRenderTest : MockitoTest {
     @Test
     fun givenViewRender_WhenThereIsNotVisibility_ThenShouldRenderTrue() {
         // Given
-        val key = ViewRender.Type.CARD_VIEW
+        val key = ViewRenderContract.Type.CARD_VIEW
         val data = DataRender(
             null,
             null,
@@ -50,7 +50,7 @@ class ViewRenderTest : MockitoTest {
     @Test
     fun givenViewRender_WhenThereIsTrueVisibility_ThenShouldRenderTrue() {
         // Given
-        val key = ViewRender.Type.CARD_VIEW
+        val key = ViewRenderContract.Type.CARD_VIEW
         val data = DataRender(
             null,
             null,
@@ -70,7 +70,7 @@ class ViewRenderTest : MockitoTest {
     @Test
     fun givenViewRender_WhenThereIsFalseVisibility_ThenShouldNotRenderTrue() {
         // Given
-        val key = ViewRender.Type.CARD_VIEW
+        val key = ViewRenderContract.Type.CARD_VIEW
         val style = StyleRender(
             null,
             null,
@@ -84,6 +84,6 @@ class ViewRenderTest : MockitoTest {
         viewRender = ViewRender(key.name, null, style, null, null)
 
         // Then
-        Assert.assertEquals(ViewRender.Type.VISIBILITY_GONE_CARD_VIEW, viewRender.type)
+        Assert.assertEquals(ViewRenderContract.Type.VISIBILITY_GONE_CARD_VIEW, viewRender.type)
     }
 }

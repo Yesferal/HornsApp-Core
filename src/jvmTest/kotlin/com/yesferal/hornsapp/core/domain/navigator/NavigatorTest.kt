@@ -2,7 +2,7 @@
 package com.yesferal.hornsapp.core.domain.navigator
 
 import com.yesferal.hornsapp.core.domain.entity.render.NavigatorRender
-import com.yesferal.hornsapp.core.domain.entity.render.ScreenRender
+import com.yesferal.hornsapp.core.domain.entity.render.ScreenRenderContract
 import org.junit.Assert
 import org.junit.Test
 
@@ -21,14 +21,14 @@ class NavigatorTest {
     fun given_aDirectionBuilder_withData_ThenGetDataFromResult() {
         // Given
         val directionBuilder = Navigator.Builder()
-            .to(ScreenRender.Type.HOME_SCREEN)
+            .to(ScreenRenderContract.Type.HOME_SCREEN)
             .with(parameters)
 
         // When
         val result = directionBuilder.build()
 
         // Then
-        Assert.assertEquals(ScreenRender.Type.HOME_SCREEN, result.to)
+        Assert.assertEquals(ScreenRenderContract.Type.HOME_SCREEN, result.to)
         Assert.assertEquals(parameters, result.navigatorRender)
         Assert.assertEquals(parameters.getString("id"), result.navigatorRender?.getString("id"))
     }
@@ -43,19 +43,19 @@ class NavigatorTest {
         val result = directionBuilder.build()
 
         // Then
-        Assert.assertEquals(ScreenRender.Type.HOME_SCREEN, result.to)
+        Assert.assertEquals(ScreenRenderContract.Type.HOME_SCREEN, result.to)
     }
 
     @Test
     fun given_aDirectionBuilder_withScreenTypeOrigin_ThenGetSameOriginFromResult() {
         // Given
         val directionBuilder = Navigator.Builder()
-            .to(ScreenRender.Type.HOME_SCREEN)
+            .to(ScreenRenderContract.Type.HOME_SCREEN)
 
         // When
         val result = directionBuilder.build()
 
         // Then
-        Assert.assertEquals(ScreenRender.Type.HOME_SCREEN, result.to)
+        Assert.assertEquals(ScreenRenderContract.Type.HOME_SCREEN, result.to)
     }
 }

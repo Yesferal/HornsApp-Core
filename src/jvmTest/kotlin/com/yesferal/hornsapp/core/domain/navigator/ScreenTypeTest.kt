@@ -2,6 +2,7 @@
 package com.yesferal.hornsapp.core.domain.navigator
 
 import com.yesferal.hornsapp.core.domain.entity.render.ScreenRender
+import com.yesferal.hornsapp.core.domain.entity.render.ScreenRenderContract
 import org.junit.Assert
 import org.junit.Test
 
@@ -14,12 +15,12 @@ class ScreenTypeTest {
     @Test
     fun givenAnScreenType_WhenParseAsDirection_ThenResultShouldContainsType() {
         // Given
-        val screenType = ScreenRender.Type.HOME_SCREEN
+        val screenType = ScreenRenderContract.Type.HOME_SCREEN
 
         // When
         val result = Navigator.Builder().to(screenType).build()
 
         // Then
-        Assert.assertEquals(ScreenRender.Type.HOME_SCREEN, result.to)
+        Assert.assertEquals(ScreenRenderContract.Type.HOME_SCREEN, result.to)
     }
 }

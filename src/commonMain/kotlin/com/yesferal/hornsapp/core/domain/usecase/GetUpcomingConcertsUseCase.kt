@@ -3,7 +3,6 @@ package com.yesferal.hornsapp.core.domain.usecase
 
 import com.yesferal.hornsapp.core.domain.abstraction.ConcertRepository
 import com.yesferal.hornsapp.core.domain.entity.Concert
-import com.yesferal.hornsapp.core.domain.entity.render.CategoryRender
 import com.yesferal.hornsapp.core.domain.util.HaResult
 
 /**

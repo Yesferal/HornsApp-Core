@@ -1,8 +1,8 @@
 package com.yesferal.hornsapp.core.data.abstraction.storage
 
-import com.yesferal.hornsapp.core.domain.entity.render.AppRender
+import com.yesferal.hornsapp.core.domain.entity.render.AppRenderContract
 
 interface RenderStorageDataSource {
-    fun getAppRender(): AppRender?
-    fun updateAppRender(appRender: AppRender)
+    fun getAppRender(): AppRenderContract?
+    fun updateAppRender(appRender: AppRenderContract)
 }

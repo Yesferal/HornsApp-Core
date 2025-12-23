@@ -3,7 +3,7 @@ package com.yesferal.hornsapp.core.domain.usecase
 
 import com.yesferal.hornsapp.core.MockitoTest
 import com.yesferal.hornsapp.core.domain.entity.Concert
-import com.yesferal.hornsapp.core.domain.entity.render.CategoryRender
+import com.yesferal.hornsapp.core.domain.entity.render.CategoryRenderContract
 import org.junit.Assert
 import org.junit.Test
 
@@ -32,7 +32,7 @@ class FilterConcertsByCategoryUseCaseTest: MockitoTest {
         filterConcertsByCategoryUseCase = FilterConcertsByCategoryUseCase()
 
         // When
-        val filter = CategoryRender.ALL
+        val filter = CategoryRenderContract.ALL
         val result = filterConcertsByCategoryUseCase.invoke(getConcerts(), filter)
 
         // Then

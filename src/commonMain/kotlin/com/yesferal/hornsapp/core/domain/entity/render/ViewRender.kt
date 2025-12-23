@@ -1,13 +1,13 @@
 /* Copyright © 2022 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.entity.render
 
-data class ViewRender(
-    private val key: String?,
-    val data: DataRender?,
-    val style: StyleRender?,
-    val children: ChildrenRender?,
-    val navigation: NavigatorRender?,
-) {
+interface ViewRenderContract {
+    val key: String?
+    val data: DataRenderContract?
+    val style: StyleRenderContract?
+    val children: ChildrenRenderContract?
+    val navigation: NavigatorRenderContract?
+
     enum class Type {
         // Views
         ROW_VIEW,
@@ -56,3 +56,11 @@ data class ViewRender(
         return style?.visibility != false
     }
 }
+
+data class ViewRender(
+    override val key: String?,
+    override val data: DataRenderContract?,
+    override val style: StyleRenderContract?,
+    override val children: ChildrenRenderContract?,
+    override val navigation: NavigatorRenderContract?
+) : ViewRenderContract

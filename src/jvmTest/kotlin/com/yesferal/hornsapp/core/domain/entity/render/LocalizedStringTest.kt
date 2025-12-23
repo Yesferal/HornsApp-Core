@@ -3,6 +3,7 @@ package com.yesferal.hornsapp.core.domain.entity.render
 
 import com.yesferal.hornsapp.core.MockitoTest
 import com.yesferal.hornsapp.core.domain.common.Locator
+import com.yesferal.hornsapp.core.domain.entity.util.LocalizedStringContract
 import com.yesferal.hornsapp.core.domain.entity.util.LocalizedString
 import org.junit.After
 import org.junit.Assert
@@ -20,7 +21,7 @@ class LocalizedStringTest : MockitoTest {
 
     private lateinit var locator: MockedStatic<Locator>
 
-    private lateinit var localizedString: LocalizedString
+    private lateinit var localizedString: LocalizedStringContract
 
     @Before
     override fun mockClasses() {
