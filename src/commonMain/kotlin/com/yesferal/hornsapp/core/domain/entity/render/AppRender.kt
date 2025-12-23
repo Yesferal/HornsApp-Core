@@ -4,8 +4,8 @@ package com.yesferal.hornsapp.core.domain.entity.render
 interface AppRenderContract {
         val platform: String?
         val appId: String?
-        val docVersion: Long?
-        val appVersion: Long?
+        val docVersion: Int?
+        val appVersion: Int?
         val screens: List<ScreenRenderContract>?
         val categories: List<CategoryRenderContract>?
 }
@@ -13,8 +13,8 @@ interface AppRenderContract {
 data class AppRender(
         override val platform: String?,
         override val appId: String?,
-        override val docVersion: Long?,
-        override val appVersion: Long?,
+        override val docVersion: Int?,
+        override val appVersion: Int?,
         override val screens: List<ScreenRenderContract>?,
         override val categories: List<CategoryRenderContract>?
 ) : AppRenderContract

@@ -1,7 +1,7 @@
 package com.yesferal.hornsapp.core.domain.abstraction
 
 interface SettingsRepository {
-    val screenDelay: Long
+    val screenDelay: Int
     fun getEnvironments(): List<Pair<String, String>>
     fun getDefaultEnvironment(): Int
     fun updateDefaultEnvironment(environment: Int)
