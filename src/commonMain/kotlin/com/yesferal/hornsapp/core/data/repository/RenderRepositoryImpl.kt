@@ -3,17 +3,17 @@ package com.yesferal.hornsapp.core.data.repository
 
 import com.yesferal.hornsapp.core.data.abstraction.remote.RenderRemoteDataSource
 import com.yesferal.hornsapp.core.domain.abstraction.RenderRepository
-import com.yesferal.hornsapp.core.domain.entity.render.CategoryRenderContract
-import com.yesferal.hornsapp.core.domain.entity.render.ScreenRenderContract
+import com.yesferal.hornsapp.core.domain.entity.render.CategoryRender
+import com.yesferal.hornsapp.core.domain.entity.render.ScreenRender
 import kotlinx.coroutines.flow.Flow
 
 class RenderRepositoryImpl(private val renderRemoteDataSource: RenderRemoteDataSource): RenderRepository {
 
-    override fun getHomeRender(): Flow<List<ScreenRenderContract>> {
+    override fun getHomeRender(): Flow<List<ScreenRender>> {
         return renderRemoteDataSource.homeRender
     }
 
-    override fun getCategoryRender(): Flow<List<CategoryRenderContract>> {
+    override fun getCategoryRender(): Flow<List<CategoryRender>> {
         return renderRemoteDataSource.categoryRender
     }
 }

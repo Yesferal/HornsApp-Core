@@ -1,20 +1,20 @@
 /* Copyright © 2022 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.navigator
 
-import com.yesferal.hornsapp.core.domain.entity.render.NavigatorRenderContract
-import com.yesferal.hornsapp.core.domain.entity.render.ScreenRenderContract
+import com.yesferal.hornsapp.core.domain.entity.render.NavigatorRender
+import com.yesferal.hornsapp.core.domain.entity.render.ScreenRender
 
 class Navigator private constructor(
-    val to: ScreenRenderContract.Type,
+    val to: ScreenRender.Type,
     val popBackStackId: Int?,
-    val navigatorRender: NavigatorRenderContract?,
+    val navigatorRender: NavigatorRender?,
 ) {
     class Builder {
-        private var to: ScreenRenderContract.Type = ScreenRenderContract.Type.UNDETERMINED_SCREEN
+        private var to: ScreenRender.Type = ScreenRender.Type.UNDETERMINED_SCREEN
         private var popBackStackId: Int? = null
-        private var navigatorRender: NavigatorRenderContract? = null
+        private var navigatorRender: NavigatorRender? = null
 
-        fun to(to: ScreenRenderContract.Type): Builder {
+        fun to(to: ScreenRender.Type): Builder {
             this.to = to
 
             return this
@@ -22,9 +22,9 @@ class Navigator private constructor(
 
         fun to(to: String): Builder {
             try {
-                this.to = ScreenRenderContract.Type.valueOf(to)
+                this.to = ScreenRender.Type.valueOf(to)
             } catch (e: Exception) {
-                this.to = ScreenRenderContract.Type.UNDETERMINED_SCREEN
+                this.to = ScreenRender.Type.UNDETERMINED_SCREEN
             }
 
             return this
@@ -42,7 +42,7 @@ class Navigator private constructor(
             return this
         }
 
-        fun with(navigatorRender: NavigatorRenderContract?): Builder {
+        fun with(navigatorRender: NavigatorRender?): Builder {
             this.navigatorRender = navigatorRender
 
             return this

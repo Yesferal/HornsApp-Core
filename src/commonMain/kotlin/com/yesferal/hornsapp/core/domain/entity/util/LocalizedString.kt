@@ -3,9 +3,7 @@ package com.yesferal.hornsapp.core.domain.entity.util
 
 import com.yesferal.hornsapp.core.domain.common.Locator
 
-interface LocalizedStringContract {
-    val en: String?
-    val es: String?
+data class LocalizedString(private val en: String?, private val es: String?) {
     val text: String?
         get() = when (Locator.language()) {
             "en" -> en
@@ -15,8 +13,3 @@ interface LocalizedStringContract {
             else -> en
         }
 }
-
-data class LocalizedString(
-    override val en: String?,
-    override val es: String?
-) : LocalizedStringContract

@@ -1,9 +1,10 @@
 /* Copyright © 2025 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core.domain.entity.render
 
-interface NavigatorRenderContract {
-    val key: String?
-    val parameters: MutableMap<String, Any>
+class NavigatorRender(
+    val key: String? = null,
+    val parameters: MutableMap<String, Any> = mutableMapOf()
+) {
 
     fun put(key: String, value: Any) {
         parameters[key] = value
@@ -32,12 +33,7 @@ interface NavigatorRenderContract {
         }
         return null
     }
-}
 
-data class NavigatorRender(
-    override val key: String? = null,
-    override val parameters: MutableMap<String, Any> = mutableMapOf()
-) : NavigatorRenderContract {
     inline fun <reified T> get(key: String): T? {
         val value = parameters[key]
         if (value is T) {
