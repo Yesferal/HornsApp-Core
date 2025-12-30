@@ -8,7 +8,7 @@ class SettingsRepositoryImpl(
     private val environmentDataSource: EnvironmentDataSource,
     private val onBoardingDataSource: OnBoardingDataSource
 ) : SettingsRepository {
-    override val screenDelay: Int
+    override val screenDelay: Long
         get() = 300
 
     override fun getEnvironments() = environmentDataSource.getEnvironments()
