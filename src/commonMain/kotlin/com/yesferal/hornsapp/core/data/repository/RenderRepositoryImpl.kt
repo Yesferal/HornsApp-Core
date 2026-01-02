@@ -5,15 +5,13 @@ import com.yesferal.hornsapp.core.data.abstraction.remote.RenderRemoteDataSource
 import com.yesferal.hornsapp.core.domain.abstraction.RenderRepository
 import com.yesferal.hornsapp.core.domain.entity.render.CategoryRender
 import com.yesferal.hornsapp.core.domain.entity.render.ScreenRender
-import kotlinx.coroutines.flow.Flow
 
 class RenderRepositoryImpl(private val renderRemoteDataSource: RenderRemoteDataSource): RenderRepository {
-
-    override fun getHomeRender(): Flow<List<ScreenRender>> {
-        return renderRemoteDataSource.homeRender
+    override suspend fun getHomeRender(): List<ScreenRender>? {
+        return renderRemoteDataSource.getHomeRender()
     }
 
-    override fun getCategoryRender(): Flow<List<CategoryRender>> {
-        return renderRemoteDataSource.categoryRender
+    override suspend fun getCategoryRender(): List<CategoryRender>? {
+        return renderRemoteDataSource.getCategoryRender()
     }
 }

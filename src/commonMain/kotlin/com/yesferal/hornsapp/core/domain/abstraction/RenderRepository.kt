@@ -3,9 +3,8 @@ package com.yesferal.hornsapp.core.domain.abstraction
 
 import com.yesferal.hornsapp.core.domain.entity.render.CategoryRender
 import com.yesferal.hornsapp.core.domain.entity.render.ScreenRender
-import kotlinx.coroutines.flow.Flow
 
 interface RenderRepository {
-    fun getHomeRender(): Flow<List<ScreenRender>>
-    fun getCategoryRender(): Flow<List<CategoryRender>>
+    suspend fun getHomeRender(): List<ScreenRender>?
+    suspend fun getCategoryRender(): List<CategoryRender>?
 }

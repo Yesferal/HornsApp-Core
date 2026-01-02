@@ -3,9 +3,8 @@ package com.yesferal.hornsapp.core.data.abstraction.remote
 
 import com.yesferal.hornsapp.core.domain.entity.render.CategoryRender
 import com.yesferal.hornsapp.core.domain.entity.render.ScreenRender
-import kotlinx.coroutines.flow.Flow
 
 interface RenderRemoteDataSource {
-    val homeRender: Flow<List<ScreenRender>>
-    val categoryRender: Flow<List<CategoryRender>>
+    suspend fun getHomeRender(): List<ScreenRender>?
+    suspend fun getCategoryRender(): List<CategoryRender>?
 }
