@@ -2,8 +2,9 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
-    kotlin("multiplatform") version "2.1.21"
+    kotlin("multiplatform") version "2.3.0"
     id("maven-publish")
+    kotlin("native.cocoapods") version "2.3.0"
 }
 
 val libraryVersion = "1.4.4"
