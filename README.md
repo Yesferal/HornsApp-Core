@@ -3,7 +3,28 @@
 # Horns App - Kotlin Multiplatform
 This is a Kotlin Multiplatform that will be import in Android and iOS projects.
 
-## How to create a new version
+## How to generate a Local Build
+
+### iOS
+First, we would need to generate a podspec file just the first time. In order to do that we should run:
+```
+./gradlew podspec
+```
+
+However, we already have created a file manually, so we will skip that line for now.
+
+After that we need to run the next line each time we do a local change:
+```
+./gradlew buildReleaseXCFramework
+```
+
+Finally, in the ios module we need to update the local module:
+```
+pod update
+pod install
+```
+
+## How to create a new Release version
 
 ### Create a Tag
 First, we have to create a new git tag
@@ -14,7 +35,7 @@ then push this tag into the Remote Repository
 ```
 git push origin --tags   
 ```
-### [iOS] Push a new version in PodSpecs Repository
+### [iOS only] Push a new version in PodSpecs Repository
 As an optional step you could clean the cache, just in case
 ```
 pod cache clean --all 
@@ -37,6 +58,9 @@ This file will first execute a script in order to build a xcframework.
 #### Script
 The script folder contains the `prepare_command.script` that will be executed by HornsAppCore.podspec file,
 as a prepare command. This script contains pre-conditions that are necessary in order to publish our library.
+
+### [Android only]
+Make sure to run the JitPack job that depends on the Github Tags.
 
 ## License
 ```

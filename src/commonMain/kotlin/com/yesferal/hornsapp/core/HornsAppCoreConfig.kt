@@ -1,5 +1,14 @@
+/* Copyright © 2025 HornsApp. All rights reserved. */
 package com.yesferal.hornsapp.core
 
-class HornsAppCoreVersion {
-    val version = "1.4.4"
+class HornsAppCoreConfig {
+    /*
+     Environment Section
+     */
+    val hornsAppCoreLibVersion = "1.4.4"
+
+    /*
+     Render Section
+     */
+    val appRenderFileName = "app_render"
 }
