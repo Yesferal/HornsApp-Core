@@ -21,8 +21,12 @@ After that we need to run the next line each time we do a local change:
 Finally, in the ios module we need to update the local module:
 ```
 pod update
+```
+```
 pod install
 ```
+
+Note: We add `iosX64` and `iosSimulatorArm64` in order to make locale build works on Simulator.
 
 ## How to create a new Release version
 

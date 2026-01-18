@@ -42,11 +42,14 @@ kotlin {
 
     val libraryName = "HornsAppCore"
 
-    // Simulator Architecture
+    // iOS Simulator (Apple Silicon Macs)
+    val iosSimulatorArm64 = iosSimulatorArm64()
+    // iOS Simulator (Intel Macs)
     val iosX64 = iosX64()
-    // Device Architecture
+    // Real iPhone / iPad devices
     val iosArm64 = iosArm64()
-    configure(listOf(iosX64, iosArm64)) {
+
+    configure(listOf(iosSimulatorArm64, iosX64, iosArm64)) {
         binaries.framework {
             baseName = libraryName
         }
