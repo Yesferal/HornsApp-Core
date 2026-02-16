@@ -7,7 +7,7 @@ plugins {
     kotlin("native.cocoapods") version "2.3.0"
 }
 
-val libraryVersion = "1.4.4"
+val libraryVersion = "1.5.0"
 group = "com.yesferal.hornsapp.core"
 version = libraryVersion
 
