@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks = "build/bin/xcframework/releaseFramework/#{spec.name}.xcframework"
   spec.libraries = "c++"
   spec.module_name = "#{spec.name}_core"
-  spec.ios.deployment_target = '15.0'
+  spec.ios.deployment_target = '17.0'
 
   spec.prepare_command = "sh ./script/prepare_command.sh"
 
