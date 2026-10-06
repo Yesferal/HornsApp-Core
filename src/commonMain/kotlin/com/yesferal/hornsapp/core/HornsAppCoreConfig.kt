@@ -5,7 +5,7 @@ class HornsAppCoreConfig {
     /*
      Environment Section
      */
-    val hornsAppCoreLibVersion = "1.6.0"
+    val hornsAppCoreLibVersion = "1.6.1"
 
     /*
      Render Section
