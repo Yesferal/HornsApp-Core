@@ -10,6 +10,7 @@ data class ViewRender(
 ) {
     enum class Type {
         // Views
+        HEADER_VIEW,
         ROW_VIEW,
         COLUMN_VIEW,
         CARD_VIEW,
@@ -35,6 +36,7 @@ data class ViewRender(
             }
 
             return when (key) {
+                Type.HEADER_VIEW.name -> Type.HEADER_VIEW
                 Type.ROW_VIEW.name -> Type.ROW_VIEW
                 Type.COLUMN_VIEW.name -> Type.COLUMN_VIEW
                 Type.CARD_VIEW.name -> Type.CARD_VIEW
